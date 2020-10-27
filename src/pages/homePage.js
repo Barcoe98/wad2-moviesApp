@@ -3,6 +3,7 @@ import Header from "../components/headerMovieList";
 import MovieList from "../components/movieList";
 import FilterControls from "../components/filterControls";
 import StubAPI from "../api/stubAPI";
+import { getMovies } from "../api/tmdb-api";
 
 const MovieListPage = () => {
   const [titleFilter, setTitleFilter] = useState("");       // NEW
@@ -10,18 +11,12 @@ const MovieListPage = () => {
 
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
-    )
-      .then(res => res.json())
-      .then(json => {
-        console.log(json)
-        return json.results
-      })
-      .then(movies => {
-        setMovies(movies);
-      });
+    getMovies().then(movies => {
+      setMovies(movies);
+    });
   }, []);
+
+  
  // NEW BLOCK START
  const genre = Number(genreFilter)
  let displayedMovies = movies
