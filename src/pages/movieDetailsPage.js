@@ -4,7 +4,7 @@ import PageTemplate from "../components/templateMoviePage";
 import {getMovie} from '../api/tmdb-api'
 
 import { Link, Route, withRouter } from "react-router-dom"
-import MovieReviews from "../components/movieReview"
+import MovieReviews from "../components/movieReviews"
 
 const MoviePage = props => {
   const { id } = props.match.params;
