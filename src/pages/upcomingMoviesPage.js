@@ -1,12 +1,12 @@
-import { getMovies } from "../api/tmdb-api";
+import { getUpcomingMovies } from "../api/tmdb-api";
 import React, { useState, useEffect } from "react";
 import StubAPI from "../api/stubAPI";
 import PageTemplate from '../components/templateMovieListPage'
 
-const MovieListPage = () => {
+const UpcomingMoviesPage = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    getMovies().then(movies => {
+    getUpcomingMovies().then(movies => {
       setMovies(movies);
     });
   }, []);   
@@ -23,11 +23,11 @@ const MovieListPage = () => {
 
   return (
       <PageTemplate
-        title='Discover Movies'
+        title='Upcoming Movies'
         movies={movies}
         buttonHandler={addToFavorites}
       />
   );
 };
 
-export default MovieListPage;
+export default UpcomingMoviesPage;

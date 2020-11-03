@@ -8,7 +8,7 @@ const MovieHeader = ({ movie }) => {
       <div className="col-6 offset-3">
         <h2>
           {movie.title}
-          {"  "}
+          {" "}
           <a href={movie.homepage}>
             <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
           </a>
