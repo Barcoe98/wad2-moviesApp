@@ -36,18 +36,19 @@ describe("Navigation", () => {
       cy.get("h2").contains(movies[1].title);
     });
     it("should allow navigation from site header", () => {
-        /*
+    /*
       cy.get("nav").find("li").eq(2).find("a").click();
       cy.url().should("include", `/favorites`);
-      cy.get("h2").contains("Favorite Movies");
+      cy.get("h2").contains("Favourite Movies");
       cy.get("nav").find("li").eq(1).find("a").click();
       cy.url().should("not.include", `/favorites`);
-      cy.get("h2").contains("No. Movies");
+      cy.get("h2").contains("No. Movies ");
       cy.get("nav").find("li").eq(2).find("a").click();
       cy.get("nav.navbar-brand").find("a").click();
       cy.url().should("not.include", `/favorites`);
-      cy.get("h2").contains("No. Movies");
+      cy.get("h2").contains("No. Movies ");
       */
+      
     });
 
     describe("From the Movie Details page ", () => {
@@ -93,8 +94,16 @@ describe("Navigation", () => {
           cy.get("h2").contains("No. Movies");
         });
 
+        //Clcik on button on first card
+        //click on nav bar element 2(favorites)
+        //click on back img
         it("should navigate from favorites page to movie details and back", () => {
-          // TODO
+            cy.get(".card").eq(0).find("button").click();
+            cy.get("nav").find("li").eq(2).find("a").click();
+            cy.get(".card").eq(0).find("img").click();
+            cy.get("svg[data-icon=arrow-circle-left]").click();
+            cy.url().should("include", `/movies`);
+            cy.get("h2").contains("Favourite Movies");
         });
 
     });
