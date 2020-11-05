@@ -58,18 +58,12 @@ const filterByGenre = (movieList, genreId) =>
             .should("have.text", matchingMovies[index].title);
           })
         })
-        it("should display no movie card(xyz) in the title", () => {
-          /*
+        it("should display no movie card (xyz) in the title", () => {
           const searchString = 'xyz'
           const matchingMovies = filterByTitle(movies, searchString );
           cy.get("input").clear().type(searchString) ;
           cy.get(".card").should("have.length", matchingMovies.length);
-          cy.get(".card").each(($card, index) => {
-            cy.wrap($card)
-            .find(".card-title")
-            .should("not.have.text", matchingMovies[index].title);
-          });
-          */
+         
         })
         
       })
@@ -77,7 +71,8 @@ const filterByGenre = (movieList, genreId) =>
         it("should display movies with the specified genre only", () => {
           const selectedGenreId = 35;
           const selectedGenreText = "Comedy";
-          const matchingMovies = filterByGenre(movies, selectedGenreId);
+          const searchString = "o";
+          const matchingMovies = filterByGenre(movies, selectedGenreId, searchString);
           cy.get("select").select(selectedGenreText); 
           cy.get(".card").should("have.length", matchingMovies.length);
           cy.get(".card").each(($card, index) => {
@@ -87,6 +82,10 @@ const filterByGenre = (movieList, genreId) =>
           });      
         });
     });
+
+    describe("By movie Title & Genre", () => {
+      
+  });
 
   });
   })
