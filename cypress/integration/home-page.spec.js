@@ -84,7 +84,18 @@ const filterByGenre = (movieList, genreId) =>
     });
 
     describe("By movie Title & Genre", () => {
-      
+      it("should display movies with the specified genre and title", () => {
+        const selectedGenreId = 35;
+        const selectedGenreText = "Comedy";
+        const matchingMovies = filterByGenre(movies, selectedGenreId);
+        cy.get("select").select(selectedGenreText); 
+        cy.get(".card").should("have.length", matchingMovies.length);
+        cy.get(".card").each(($card, index) => {
+          cy.wrap($card)
+            .find(".card-title")
+            .should("have.text", matchingMovies[index].title);
+        });      
+      });
   });
 
   });
