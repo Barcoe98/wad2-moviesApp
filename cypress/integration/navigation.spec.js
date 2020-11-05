@@ -1,5 +1,6 @@
 let movies;
 const movieId = 497582; // Enola Holmes movie id
+const reviewId = "5f69e4d0cee2f6003633becf"
 let reviews;
 
 describe("Navigation", () => {
@@ -59,18 +60,15 @@ describe("Navigation", () => {
           cy.contains("Hide Reviews").click();
           cy.url().should("not.include", `/movies/${movieId}/reviews`);
         });
-    });
-
-    describe("From the Movie Details page ", () => {
-        /*
+    
         it("navigate to the full review page when a 'Full Review' link is clicked", () => {
-            cy.contains("Full Review").click();
-            cy.url().should("include", `/reviews`);
+            cy.contains("Show Reviews").click();
+            cy.url().should("include", `/movies/${movieId}/reviews`);
+            cy.get('tbody > :nth-child(1) > :nth-child(3) > a').click();
+            cy.url().should("include", `/reviews/${reviewId}`);
         });
-        */
       });
 
-      
       describe("From the Favorites page", () => {
         beforeEach(() => {
           cy.visit("/");
@@ -83,5 +81,23 @@ describe("Navigation", () => {
           cy.get("h2").contains(movies[0].title);
         });
       });
-    })
-    })
+ 
+      describe("The Go Back button", () => {
+        beforeEach(() => {
+          cy.visit("/");
+        });
+        it("should navigate from home page to movie details and back", () => {
+          cy.get(".card").eq(1).find("img").click();
+          cy.get("svg[data-icon=arrow-circle-left]").click();
+          cy.url().should("not.include", `/movies`);
+          cy.get("h2").contains("No. Movies");
+        });
+
+        it("should navigate from favorites page to movie details and back", () => {
+          // TODO
+        });
+
+    });
+
+});
+})
