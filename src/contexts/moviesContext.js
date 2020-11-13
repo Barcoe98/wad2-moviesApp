@@ -12,10 +12,21 @@ const reducer = (state, action) => {
         ),
         upcoming: [...state.upcoming],
       };
+
+      case "add-watchlist":
+        return {
+          movies: state.movies.map((m) =>
+            m.id === action.payload.movie.id ? { ...m, watchlist: true } : m
+          ),
+          upcoming: [...state.upcoming],
+        };
+
     case "load":
       return { movies: action.payload.movies, upcoming: [...state.upcoming] };
+
     case "load-upcoming":
       return { upcoming: action.payload.movies, movies: [...state.movies] };
+
     case "add-review":
       return {
         movies: state.movies.map((m) =>
@@ -38,6 +49,11 @@ const MoviesContextProvider = (props) => {
     dispatch({ type: "add-favorite", payload: { movie: state.movies[index] } });
   };
 
+  const addToWatchList = (movieId) => {
+    const index = state.movies.map((m) => m.id).indexOf(movieId);
+    dispatch({ type: "add-watchlist", payload: { movie: state.movies[index] } });
+  };
+
   const addReview = (movie, review) => {
     dispatch({ type: "add-review", payload: { movie, review } });
   };
@@ -46,14 +62,12 @@ const MoviesContextProvider = (props) => {
     getMovies().then((movies) => {
       dispatch({ type: "load", payload: { movies } });
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     getUpcomingMovies().then((movies) => {
       dispatch({ type: "load-upcoming", payload: { movies } });
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -62,6 +76,7 @@ const MoviesContextProvider = (props) => {
         movies: state.movies,
         upcoming: state.upcoming,
         addToFavorites: addToFavorites,
+        addToWatchList: addToWatchList,
         addReview: addReview,
       }}
     >
