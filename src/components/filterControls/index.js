@@ -20,13 +20,13 @@ const FilterControls = props => {
     <div className="filter-controls row">
       <div className="col-md-12">
         <h4>
-          <span>List Filtering:</span>
+          <span>List Filtering :</span>
           <input
             type="text"
-            placeholder= "Search Title"
+            placeholder= "Search"
             onChange={handleTextChange}
           />
-          <span>Genre:</span>
+          <span>Genre :</span>
           <select id="genre" onChange={handleGenreChange}>
             {context.genres.map(genre => {
               return (
