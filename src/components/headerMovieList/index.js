@@ -4,10 +4,10 @@ import "./headerMovieList.css";
 const Header = ({ title, numMovies }) => {
   return (
     <div className="row">
-      <div>
+      <div className="offset-4">
         <h2 className="h2-title">
-          {`${title}  `}
-          <span className="badge badge-pill badge-success">{numMovies}</span>
+          {`${title } `}
+          <span className="badge badge-pill">{numMovies}</span>
         </h2>
       </div>
     </div>

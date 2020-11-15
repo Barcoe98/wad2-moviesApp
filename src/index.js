@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
+import "./app.css"
+
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
 import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"    // CHANGED
@@ -19,8 +21,9 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 
 const App = () => {
   return (
+    <div className = "page-temp">
     <BrowserRouter>
-    <div className="jumbotron">
+    <div className ="page-template">
       <SiteHeader /> 
       <div className="container-fluid">
         <MoviesContextProvider> 
@@ -41,11 +44,12 @@ const App = () => {
               <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
           </Switch>
-          </GenresContextProvider>    {/* NEW */}
-          </MoviesContextProvider>     {/* NEW */}
+          </GenresContextProvider>    
+          </MoviesContextProvider>     
         </div>
       </div>
-    </BrowserRouter>
+      </BrowserRouter>
+      </div>
   );
 };
 

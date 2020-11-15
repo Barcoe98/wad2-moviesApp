@@ -6,12 +6,16 @@
     margin-bottom: 2px;    
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    background-color:none;
   }
 .card {
-    background-color: #009dff;
     font-size: small;
+    border-color: #555555;
+    background-color: #009dff;
     margin-bottom: 10px;
     border-radius: 10px;
+    ;
+
   }
 .card-title {
     text-align: center;
@@ -21,16 +25,4 @@
 
 
 
-  /*redudent*/
-p {
-  margin-top: 1px;
-  margin-bottom: 1px;
-}
-
-
-.card-body {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin: 10px;
-}
 
