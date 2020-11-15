@@ -1,10 +1,11 @@
 import React from "react";
+import "./headerMovieList.css";
 
 const Header = ({ title, numMovies }) => {
   return (
     <div className="row">
-      <div className="col-md-6 offset-4">
-        <h2>
+      <div>
+        <h2 className="h2-title">
           {`${title}  `}
           <span className="badge badge-pill badge-success">{numMovies}</span>
         </h2>
