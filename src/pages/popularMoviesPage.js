@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
+import PageTemplate from '../components/templateMovieListPage'
+import {MoviesContext} from '../contexts/moviesContext'
+import AddToWatchListButton from '../components/buttons/addToWatchList'
 
-const popularMoviesPage = () => {
+const PopularMoviesPage = () => {
+  const context = useContext(MoviesContext);
+  const popular = context.popular.filter((m) => {
+      return !("watchlist" in m);
+    });
+
   return (
-      <h1>Popular Movies</h1>
+      <PageTemplate 
+        title='Popular Movies'
+        movies={popular}  
+        action={(movie) => {
+          return <AddToWatchListButton movie={movie} /> 
+        }}
+      />
   );
 };
 
-export default popularMoviesPage;
+export default PopularMoviesPage;

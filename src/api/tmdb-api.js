@@ -15,10 +15,19 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-   //get upcoming movies
+   //get Top Rated movies
    export const getTopRatedMovies = () => {
     return fetch(
       `https://api.themoviedb.org/3/movie/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
+       )
+      .then(res => res.json())
+      .then(json => json.results);
+  };
+
+   //get Popular movies
+   export const getPopularMovies = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&page=1`
        )
       .then(res => res.json())
       .then(json => json.results);
