@@ -17,13 +17,13 @@ const FilterControls = props => {
   };
 
   return (
-    <div className="row bg-warning">
+    <div className="filter-controls row">
       <div className="col-md-12">
         <h4>
           <span>List Filtering:</span>
           <input
             type="text"
-            placeholder="Title Search"
+            placeholder= "Search Title"
             onChange={handleTextChange}
           />
           <span>Genre:</span>

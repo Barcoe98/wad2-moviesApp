@@ -7,4 +7,35 @@
   
   input {
     margin-right: 100px;
+    text-align: center;
+    color: whitesmoke;
+    background-color:#989898 ;
+    border-color: #989898;
+    border-style: none;
   }
+
+  ::placeholder { 
+    color: whitesmoke;
+    opacity: .5; 
+  }
+
+  select{
+    text-align: center;
+    color: whitesmoke;
+    background-color:#989898 ;
+    border-color: #989898;
+    border-style: none;
+  }
+
+  .filter-controls {
+    font-weight: 520;
+    text-align: center;
+    color: whitesmoke;
+
+    background-color: #009dff;
+    border-radius: 14px;
+    padding: 6px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+
