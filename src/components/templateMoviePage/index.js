@@ -1,6 +1,9 @@
 import React from "react";
 import MovieHeader from '../headerMovie'
 import "./moviePage.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+
 
 const TemplateMoviePage = ({ movie, children }) => {
   return (
@@ -8,7 +11,7 @@ const TemplateMoviePage = ({ movie, children }) => {
     <div className="page">
       <MovieHeader movie={movie} />
       <div className="row">
-        <div className="col-3">
+        <div className="col-4">
           <img
             src={
               movie.poster_path
@@ -19,7 +22,18 @@ const TemplateMoviePage = ({ movie, children }) => {
             alt={movie.title}
           />
         </div>
-        <div className="col-9">{children}</div>
+        <div className=" mTitle col-8">
+        <h2>
+          {movie.title}
+          {/* /*
+          {"   "}
+          <a href={movie.homepage}>
+            <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
+          </a>
+          */}
+        </h2>
+        {children}
+      </div>
       </div>
       </div>
     </>
