@@ -11,6 +11,8 @@ import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const sample = {
   adult: false,
@@ -100,7 +102,9 @@ storiesOf("Home Page/MovieCard", module)
   .add("default", () => (
     <MovieCard
       movie={sample}
-      action={movie => <button className="btn w-100 btn-primary">Test</button>}
+      action={movie => <button className="btn">
+        <FontAwesomeIcon icon={["fas", "star"]} />
+      </button>}
     />
   ))
   .add("exception", () => {
@@ -109,7 +113,10 @@ storiesOf("Home Page/MovieCard", module)
       <MovieCard
         movie={sampleNoPoster}
         action={movie => (
-          <button className="btn w-100 btn-primary">Test</button>
+          <button className="btn">
+            <FontAwesomeIcon icon={["fas", "star"]} />
+
+          </button>
         )}
       />
     );
@@ -137,7 +144,9 @@ storiesOf("Home Page/MovieList", module)
       <MovieList
         movies={movies}
         action={movie => (
-          <button className="btn w-100 btn-primary">Test</button>
+          <button className="btn w-100">
+            <FontAwesomeIcon icon={["fas", "star"]} />
+            </button>
         )}
       />
     );

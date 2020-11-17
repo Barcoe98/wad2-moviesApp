@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import {MoviesContext} from "../../contexts/moviesContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AddToFavoriteButton = ({ movie }) => {
   const context = useContext(MoviesContext);
@@ -8,13 +9,14 @@ const AddToFavoriteButton = ({ movie }) => {
     e.preventDefault();
     context.addToFavorites(movie.id);
   };
+  
   return (
     <button
       type="button"
-      className="btn w-100 btn-primary"
+      className="btn"
       onClick={handleAddToFavorite}
     >
-      Add to Favorites
+      <FontAwesomeIcon icon={["fas", "star"]} />
     </button>
   );
 };

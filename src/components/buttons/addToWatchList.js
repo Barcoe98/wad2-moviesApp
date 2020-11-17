@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import {MoviesContext} from "../../contexts/moviesContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AddToWatchListButton = ({ movie }) => {
   const context = useContext(MoviesContext);
@@ -11,10 +12,10 @@ const AddToWatchListButton = ({ movie }) => {
   return (
     <button
       type="button"
-      className="btn w-100 btn-primary"
+      className="btn"
       onClick={handleAddToWatchList}
     >
-      Add to Watch List
+     <FontAwesomeIcon icon={["fas", "star"]} />
     </button>
   );
 };
