@@ -4,8 +4,9 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./app.css"
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
-import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"    // CHANGED
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"
 import FavoriteMoviesPage from './pages/favoritesMoviesPage'       
+import WatchListMoviesPage from './pages/watchListMoviesPage'       
 import UpcomingMoviesPage from './pages/upcomingMoviesPage'
 import TopRatedMoviesPage from './pages/topRatedMoviesPage'
 import PopularMoviesPage from './pages/popularMoviesPage'
@@ -27,6 +28,7 @@ const App = () => {
             <Switch>
               <Route exact path="/reviews/form" component={AddMovieReviewPage} />
               <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+              <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
               <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
               <Route exact path="/movies/topRated" component={TopRatedMoviesPage} />
               <Route exact path="/movies/popular" component={PopularMoviesPage} />

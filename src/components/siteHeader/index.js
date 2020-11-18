@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../globals/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./siteHeader.css";
@@ -30,7 +29,7 @@ const SiteHeader = () => {
 
       <Nav.Link href="/forum">FORUM</Nav.Link>
       <Nav.Link href="/movies/favorites">FAVOURITES</Nav.Link>
-      <Nav.Link href="/watchlist">WATCH LIST</Nav.Link>
+      <Nav.Link href="/movies/watchlist">WATCH LIST</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

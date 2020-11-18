@@ -1,7 +1,7 @@
 import React from "react";
 import MovieHeader from '../headerMovie'
 import "./moviePage.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 //Template for movie Details Page
