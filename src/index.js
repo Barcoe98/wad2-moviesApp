@@ -2,17 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./app.css"
-
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage'
-import { BrowserRouter, Route, Redirect, Switch, Link } from "react-router-dom"    // CHANGED
+import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"    // CHANGED
 import FavoriteMoviesPage from './pages/favoritesMoviesPage'       
 import UpcomingMoviesPage from './pages/upcomingMoviesPage'
 import TopRatedMoviesPage from './pages/topRatedMoviesPage'
 import PopularMoviesPage from './pages/popularMoviesPage'
-
-import UpcomingTvShowsPage from './pages/upcomingTvShowsPage'
-import TopRatedTvShowsPage from './pages/topRatedTvShowsPage'  
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import MoviesContextProvider from "./contexts/moviesContext";
@@ -34,11 +30,6 @@ const App = () => {
               <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
               <Route exact path="/movies/topRated" component={TopRatedMoviesPage} />
               <Route exact path="/movies/popular" component={PopularMoviesPage} />
-
-
-              <Route exact path="/tvshows/topRated" component={TopRatedTvShowsPage} />
-              <Route exact path="/tvshows/upcoming" component={UpcomingTvShowsPage} />
-
               <Route path="/reviews/:id" component={MovieReviewPage} />
               <Route path="/movies/:id" component={MoviePage} />
               <Route path="/" component={HomePage} />

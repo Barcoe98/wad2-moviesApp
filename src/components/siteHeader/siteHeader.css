@@ -1,9 +1,9 @@
+/* Site Nav Bar */
+/* top - right - bottom - left */
 .fixed-top {
     color: black;
     font-size: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 40px;
+    padding: 10px 5px 10px 40px ;
     background-color:#009DFF;
     font-size: medium;
 }

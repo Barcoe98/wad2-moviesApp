@@ -1,17 +1,15 @@
+/* Page Title */
 .h2-title{
     font-weight: 520;
     border-radius: 14px;
     padding: 6px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    margin-top: 40px;
-    color: whitesmoke;
-    float: center;
-     
+    margin: 40px 10px 20px 10px;
+    color: #333;
+    float: center;  
 }
 
+/* Movie number badge */
 .badge{
-    background-color: #009dff;
+    background-color: gold;
 }
 

@@ -4,7 +4,7 @@ import "./headerMovieList.css";
 const Header = ({ title, numMovies }) => {
   return (
     <div className="row">
-      <div className="offset-4.5">
+      <div>
         <h2 className="h2-title">
           {`${title } `}
           <span className="badge badge-pill">{numMovies}</span>

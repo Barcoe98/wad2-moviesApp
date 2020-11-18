@@ -3,6 +3,8 @@ import Header from "../headerMovieList";
 import MovieList from "../movieList";
 import FilterControls from "../filterControls";
 
+// Template for list movie on a page
+
 const MovieListPageTemplate = ({ movies, title, action }) => {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
@@ -22,6 +24,8 @@ const MovieListPageTemplate = ({ movies, title, action }) => {
     else setGenreFilter(value);
   };
 
+  //returns each element to the template when called
+  //header, filter controls, list of movies
   return (
     <>
       <Header title={title} numMovies={displayedMovies.length} />

@@ -13,14 +13,14 @@ const SiteHeader = () => {
         icon={["fas", "film"]}
         size="2x"
       />
-  <Navbar.Brand href="#home">TMDB</Navbar.Brand>
+  <Navbar.Brand href="/home">TMDB</Navbar.Brand>
   
 
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
  
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="ml-auto">
-    <Nav.Link className="nav-link text-white" href="/">HOME</Nav.Link>
+    <Nav.Link className="nav-link text-white" href="/movies">HOME</Nav.Link>
 
       <NavDropdown className="text-white" title="MOVIES" id="basic-nav-dropdown">
         <NavDropdown.Item href="/movies/popular">POPULAR</NavDropdown.Item>
@@ -28,14 +28,9 @@ const SiteHeader = () => {
         <NavDropdown.Item href="/movies/upcoming">UPCOMING</NavDropdown.Item>
       </NavDropdown>
 
-      <NavDropdown title="TV SHOWS" id="basic-nav-dropdown">
-        <NavDropdown.Item href="/tvshows/upcoming">POPULAR</NavDropdown.Item>
-        <NavDropdown.Item href="/tvshows/toprated">TOP RATED</NavDropdown.Item>
-      </NavDropdown>
-
       <Nav.Link href="/forum">FORUM</Nav.Link>
-      <Nav.Link href="/forum">FAVOURITES</Nav.Link>
-      <Nav.Link href="/forum">WATCH LIST</Nav.Link>
+      <Nav.Link href="/movies/favorites">FAVOURITES</Nav.Link>
+      <Nav.Link href="/watchlist">WATCH LIST</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
