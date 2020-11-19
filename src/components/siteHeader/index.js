@@ -22,14 +22,15 @@ const SiteHeader = () => {
       <Nav.Item><Link className="nav-link text-dark" to="/"> HOME</Link></Nav.Item>
 
       <NavDropdown className="text-dark" title="MOVIES" id="basic-nav-dropdown">
+        <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/nowplaying"> NOW PLAYING</Link></NavDropdown.Item>
         <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/popular"> POPULAR</Link></NavDropdown.Item>
         <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/toprated"> TOP RATED</Link></NavDropdown.Item>
         <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/upcoming"> UPCOMING</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/favorites"> FAVOURITES</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/watchlist"> WATCH LIST</Link></NavDropdown.Item>
       </NavDropdown>
 
-    <Nav.Link className="nav-link text-dark" href="/forum">FORUM</Nav.Link>
+      <Nav.Item><Link className="nav-link text-dark" to="/movies/favorites"> FAVOURITES</Link></Nav.Item>
+      <Nav.Item><Link className="nav-link text-dark" to="/movies/watchlist"> WATCH LIST</Link></Nav.Item>
+      <Nav.Item><Link className="nav-link text-dark" to="/movies/watchlist">FORUM</Link></Nav.Item>
   </Nav>
   </Navbar.Collapse>
 </Navbar>
