@@ -1,6 +1,7 @@
 let movieId = null
 let movie;
 let reviews;
+
 describe("Movie Details Page", () => {
   before(() => {
     cy.request(
@@ -28,7 +29,8 @@ describe("Movie Details Page", () => {
       })
   });
   beforeEach(() => {
-    cy.visit(`/movies/${movie.id}`);
+    cy.visit(`/`);
+    cy.get(".card").eq(2).find("img").click();
   });
 
   it("should display movie title in the page header", () => {
