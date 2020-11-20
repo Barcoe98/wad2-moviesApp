@@ -25,9 +25,9 @@ cache:
 # Jobs 
 
 install_dependencies:
-  artifacts:
+ artifacts:
     paths:
-      - node_modules/
+      - build/ 
 
 bundle_app:
   stage: build
@@ -50,6 +50,14 @@ build_jobX:
   script:
     - echo "build job X on demoBranch works"
 
+exercise_job:
+  stage: test
+  only:
+    - master
+    - demobranch2
+  script:
+    - echo "Exercise Job"
+
 test_jobX:
   stage: test
   only:
@@ -57,3 +65,4 @@ test_jobX:
     - demobranch2
   script:
     - echo "test job X"
+
