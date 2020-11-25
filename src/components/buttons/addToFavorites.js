@@ -16,7 +16,8 @@ const AddToFavoriteButton = ({ movie }) => {
       className="btn"
       onClick={handleAddToFavorite}
     >
-      <FontAwesomeIcon icon={["fas", "star"]} />
+      Add to Favourites
+      {/* <FontAwesomeIcon icon={["fas", "star"]} /> */}
     </button>
   );
 };

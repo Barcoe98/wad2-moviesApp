@@ -23,10 +23,9 @@ const MovieCard = ({movie, action}) => {
       </Link>
       
       <div>
-        {action(movie)}
+      <h4 className="card-title">{movie.title}</h4>
+           {action(movie)}
         </div>
-        <h4 className="card-title">{movie.title}</h4>
-
       </div>
        
       </div>

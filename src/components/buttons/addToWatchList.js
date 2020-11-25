@@ -15,7 +15,8 @@ const AddToWatchListButton = ({ movie }) => {
       className="btn"
       onClick={handleAddToWatchList}
     >
-     <FontAwesomeIcon icon={["fas", "star"]} />
+      Add to Watch List
+    {/* <FontAwesomeIcon icon={["fas", "star"]} /> */}
     </button>
   );
 };
