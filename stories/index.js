@@ -7,6 +7,10 @@ import MoviesHeader from "../src/components/headerMovieList";
 import MovieList from "../src/components/movieList";
 import MovieDetails from "../src/components/movieDetails";
 import MovieHeader from "../src/components/headerMovie";
+import MovieReviews from "../src/components/movieReviews";
+import MovieReview from "../src/components/movieReview";
+
+
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
@@ -95,7 +99,9 @@ const sample = {
   vote_count: 9692
 };
 
-storiesOf("Home Page/MovieCard", module)
+//Story for home page with movie card
+//movie card tat show movie poster and default poster
+storiesOf("Movie List Pages/Movie Card", module)
   .addDecorator(story => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
@@ -103,7 +109,7 @@ storiesOf("Home Page/MovieCard", module)
     <MovieCard
       movie={sample}
       action={movie => <button className="btn">
-        <FontAwesomeIcon icon={["fas", "star"]} />
+        Test Button
       </button>}
     />
   ))
@@ -122,7 +128,9 @@ storiesOf("Home Page/MovieCard", module)
     );
   });
 
-storiesOf("Home Page/FilterControls", module)
+   
+//Story for Filter controls on Movie List Pages 
+storiesOf("Movie List Pages/Filter Controls", module)
   .addDecorator(story => (
     <GenresContextProvider>{story()}</GenresContextProvider>
   ))
@@ -130,11 +138,13 @@ storiesOf("Home Page/FilterControls", module)
     <FilterControls onUserInput={action("button-click")} numMovies={10} />
   ));
 
-storiesOf("Home Page/Header", module).add("default", () => (
+// Story For Movie Header
+storiesOf("Movie List Pages/ Header", module).add("default", () => (
   <MoviesHeader title="All Movies" numMovies={10} />
 ));
 
-storiesOf("Home Page/MovieList", module)
+//Story for Movie List
+storiesOf("Movie List Pages/Movie List", module)
   .addDecorator(story => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
@@ -145,19 +155,41 @@ storiesOf("Home Page/MovieList", module)
         movies={movies}
         action={movie => (
           <button className="btn w-100">
-            <FontAwesomeIcon icon={["fas", "star"]} />
+            Test Button
             </button>
         )}
       />
     );
   });
 
-storiesOf("Movie Details Page/MovieDetails", module).add("default", () => (
+/* Story for diplaying Movie Details*/
+storiesOf("Movie Details Page/Movie Details", module)
+.add("default", () => (
   <MovieDetails movie={sample} />
 ));
 
-storiesOf("Movie Details Page/MovieHeader", module)
+//Story for Movie Header 
+storiesOf("Movie Details Page/Movie Header", module)
   .addDecorator(story => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
   .add("default", () => <MovieHeader movie={sample} />);
+
+/*Display Movie Review (Detailed)*/
+// storiesOf("Movie Details Page/Movie Review", module)
+// .addDecorator(story => (
+  //   <MemoryRouter initialEntries={["/reviews/:id"]}>{story()}</MemoryRouter>
+  // ))
+  // .add("default", () => (
+  //   <MovieReview movie={sample} />
+  // ));
+
+//Display Movie Reviews
+storiesOf("Movie Details Page/Movie Reviews", module)
+.addDecorator(story => (
+  <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+))
+.add("default", () => (
+  <MovieReviews movie={sample} />
+));
+
