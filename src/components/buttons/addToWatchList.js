@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import {MoviesContext} from "../../contexts/moviesContext";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const AddToWatchListButton = ({ movie }) => {
   const context = useContext(MoviesContext);

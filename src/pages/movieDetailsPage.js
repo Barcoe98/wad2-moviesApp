@@ -17,7 +17,7 @@ const MoviePage = props => {
           <MovieDetails movie={movie} />
         </PageTemplate>
         <div className="row">
-          <div className="col-12 ">
+          <div className="col-8 offset-3">
             {!props.history.location.pathname.endsWith("/reviews") ? (
               <Link
                 className="btn btn-primary btn-block active"
@@ -33,14 +33,16 @@ const MoviePage = props => {
                 Hide Reviews 
               </Link>
             )}
-          </div>
-        </div>
+         
         <Route
           path={`/movies/:id/reviews`}
           render={props => <MovieReviews movie={movie} {...props} />}
         />
+         </div>
+        </div>
       </>
-    ) : (
+    ) 
+: (
       <p>Waiting for movie details</p>
     )}
   </>

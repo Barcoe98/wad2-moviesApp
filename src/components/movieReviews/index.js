@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getMovieReviews } from "../../api/tmdb-api";
 import { excerpt } from "../../util";
+import "./movieReviews.css";
+
 
 export default ({ movie }) => {
   const [reviews, setReviews] = useState([]);
@@ -12,7 +14,7 @@ export default ({ movie }) => {
     });
   }, []);
   return (
-    <table className="table table-striped table-bordered table-hover">
+    <table className="table table-hover">
       <thead>
         <tr>
           <th scope="col">Author</th>
@@ -28,7 +30,7 @@ export default ({ movie }) => {
                 <td>{excerpt(r.content)}</td>
                 <td>
                   {" "}
-                  <Link
+                  <Link className="fullReview"
                     to={{
                       pathname: `/reviews/${r.id}`,
                       state: {

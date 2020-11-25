@@ -27,28 +27,43 @@ const reducer = (state, action) => {
         };
 
     case "load":
-      return { movies: action.payload.movies, upcoming: [...state.upcoming], 
-        topRated: [...state.topRated], popular: [...state.popular], 
+      return { 
+        movies: action.payload.movies, 
+        upcoming: [...state.upcoming], 
+        topRated: [...state.topRated], 
+        popular: [...state.popular], 
         nowPlaying: [...state.nowPlaying] };
 
     case "load-upcoming":
-      return { upcoming: action.payload.movies, movies: [...state.movies], 
-        topRated: [...state.topRated], popular: [...state.popular], 
+      return { 
+        upcoming: action.payload.movies, 
+        movies: [...state.movies], 
+        topRated: [...state.topRated], 
+        popular: [...state.popular], 
         nowPlaying: [...state.nowPlaying] };
 
     case "load-top-rated":
-      return { topRated: action.payload.movies, movies: [...state.movies], 
-        upcoming: [...state.upcoming], popular: [...state.popular], 
+      return { 
+        topRated: action.payload.movies, 
+        movies: [...state.movies], 
+        upcoming: [...state.upcoming], 
+        popular: [...state.popular], 
         nowPlaying: [...state.nowPlaying] };
 
     case "load-popular":
-      return { popular: action.payload.movies, movies: [...state.movies], 
-        upcoming: [...state.upcoming], topRated: [...state.topRated], 
+      return { 
+        popular: action.payload.movies, 
+        movies: [...state.movies], 
+        upcoming: [...state.upcoming], 
+        topRated: [...state.topRated], 
         nowPlaying: [...state.nowPlaying] };
 
     case "load-now-playing":
-      return { nowPlaying: action.payload.movies, movies: [...state.movies], 
-        upcoming: [...state.upcoming], popular: [...state.popular], 
+      return { 
+        nowPlaying: action.payload.movies, 
+        movies: [...state.movies], 
+        upcoming: [...state.upcoming], 
+        popular: [...state.popular], 
         topRated: [...state.topRated]};
 
     case "add-review":
