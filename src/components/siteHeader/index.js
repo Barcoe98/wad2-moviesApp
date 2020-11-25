@@ -11,9 +11,9 @@ const SiteHeader = () => {
     <FontAwesomeIcon
         className="navbar-text text-light"
         icon={["fas", "film"]}
-        size="2x"
+        size="3x"
       />
-  <Navbar.Brand href="/">TMDB</Navbar.Brand>
+  <Navbar.Brand className="brand" href="/">TMDB</Navbar.Brand>
   
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
@@ -30,7 +30,6 @@ const SiteHeader = () => {
 
       <Nav.Item><Link className="nav-link text-dark" to="/movies/favorites"> FAVOURITES</Link></Nav.Item>
       <Nav.Item><Link className="nav-link text-dark" to="/movies/watchlist"> WATCH LIST</Link></Nav.Item>
-      <Nav.Item><Link className="nav-link text-dark" to="/movies/watchlist">FORUM</Link></Nav.Item>
   </Nav>
   </Navbar.Collapse>
 </Navbar>

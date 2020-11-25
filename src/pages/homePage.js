@@ -11,9 +11,9 @@ const MovieListPage = () => {
 
   return (
       <PageTemplate 
-        title='Movies'
+        title='Discover Movies'
         movies={movies}
-        action={(movie) => {return <AddToFavoritesButton movie={movie} /> }}/>
+        action={(movie) => {return <AddToFavoritesButton movie={movie}/> }}/>
   );
 };
 
