@@ -6,6 +6,7 @@ export default ({ movie }) => {
     <>
       <h4 className="col-2">Overview</h4>
       <p>{movie.overview}</p>
+      
       <ul className="list-group list-group-horizontal">
         <li key="ruh" className=" itemTitle list-group-item list-group-item-dark">
           Runtime (min.)
