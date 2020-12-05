@@ -42,14 +42,13 @@ describe("Navigation", () => {
     beforeEach(() => {
       cy.visit("/");
     });
-
-    //get first card on view, click img
-    //check if url contain /movies/movie_id
-    //check h2 header that it contains movie title
-    it("should navigate to the movie details page and change browser URL", () => {
-      cy.get(".card").eq(1).find("img").click();
-      cy.url().should("include", `/movies/${movies[1].id}`);
-      cy.get("h2").contains(movies[1].title);
+      //get first card on view, click img
+      //check if url contain /movies/movie_id
+      //check h2 header that it contains movie title
+      it("should navigate to the movie details page and change browser URL", () => {
+        cy.get(".card").eq(1).find("img").click();
+        cy.url().should("include", `/movies/${movies[1].id}`);
+        cy.get("h2").contains(movies[1].title);
     });
 
 
@@ -59,61 +58,61 @@ describe("Navigation", () => {
     //check in url and name are name of page
     describe("From the site header ", () => {
 
-    it("Navigate to Now Playing Movies", () => {
-      //Now Playing Page
-      cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(0).click();
-      cy.url().should("include", `/nowplaying`);
-      cy.get("h2").contains("Now Playing Movies");
-    });
-    
-    it("Navigate to Popular Movies", () => {
-      //Popular Page
-      cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(1).click();
-      cy.url().should("include", `/popular`);
-      cy.get("h2").contains("Popular Movies");
-    });
+      it("Navigate to Now Playing Movies", () => {
+        //Now Playing Page
+        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(0).click();
+        cy.url().should("include", `/nowplaying`);
+        cy.get("h2").contains("Now Playing Movies");
+      });
       
-    it("Navigate to Top Rated Movies", () => {
-      //Top Rated Page
-      cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(2).click();
-      cy.url().should("include", `/toprated`);
-      cy.get("h2").contains("Top Rated Movies");
-    });
+      it("Navigate to Popular Movies", () => {
+        //Popular Page
+        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(1).click();
+        cy.url().should("include", `/popular`);
+        cy.get("h2").contains("Popular Movies");
+      });
+        
+      it("Navigate to Top Rated Movies", () => {
+        //Top Rated Page
+        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(2).click();
+        cy.url().should("include", `/toprated`);
+        cy.get("h2").contains("Top Rated Movies");
+      });
 
-    it("Navigate to Upcoming Movies", () => {
-      //Upcoming Page
-      cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(3).click();
-      cy.url().should("include", `/upcoming`);
-      cy.get("h2").contains("Upcoming Movies");
-    });
+      it("Navigate to Upcoming Movies", () => {
+        //Upcoming Page
+        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(3).click();
+        cy.url().should("include", `/upcoming`);
+        cy.get("h2").contains("Upcoming Movies");
+      });
 
-    it("Navigate to Discover Movies / Home page", () => {
-      //Discover Movies/Home Page
-      cy.get("nav").get("div").eq(3).find("a").eq(3).click();
-      cy.url().should("not.include", `/favorites`);
-      cy.get("h2").contains("Watch List Movies");
-    });
+      it("Navigate to Discover Movies / Home page", () => {
+        //Discover Movies/Home Page
+        cy.get("nav").get("div").eq(3).find("a").eq(3).click();
+        cy.url().should("not.include", `/favorites`);
+        cy.get("h2").contains("Watch List Movies");
+      });
 
-    it("Navigate to Favourite Movies", () => {
-      //Favourites Page
-      cy.get("nav").get("div").eq(3).find("a").eq(2).click();
-      cy.url().should("include", `/favorites`);
-      cy.get("h2").contains("Favorite Movies");
-    });
+      it("Navigate to Favourite Movies", () => {
+        //Favourites Page
+        cy.get("nav").get("div").eq(3).find("a").eq(2).click();
+        cy.url().should("include", `/favorites`);
+        cy.get("h2").contains("Favorite Movies");
+      });
 
-    it("Navigate to Watch List Movies", () => {
-      //Watch List Page
-      cy.get("nav").get("div").eq(3).find("a").eq(3).click();
-      cy.url().should("include", `/watchlist`);
-      cy.get("h2").contains("Watch List Movies");
-    });
+      it("Navigate to Watch List Movies", () => {
+        //Watch List Page
+        cy.get("nav").get("div").eq(3).find("a").eq(3).click();
+        cy.url().should("include", `/watchlist`);
+        cy.get("h2").contains("Watch List Movies");
+      });
 
-    it("Navigate to Home From Nav Brand", () => {
-      //check nav brand
-      cy.get("nav").find("div").eq(2).find("a").click();
-      cy.url().should("not.include", `/favorites`);
-      cy.get("h2").contains("Discover Movies");  
-    })
+      it("Navigate to Home From Nav Brand", () => {
+        //check nav brand
+        cy.get("nav").find("div").eq(2).find("a").click();
+        cy.url().should("not.include", `/favorites`);
+        cy.get("h2").contains("Discover Movies");  
+      })
     });
    
     describe("From the Movie Details page ", () => {
@@ -134,7 +133,6 @@ describe("Navigation", () => {
             cy.get('tbody > :nth-child(1) > :nth-child(3) > a').click();
             cy.url().should("include", `/reviews/${reviewId}`);
         });
-
       });
 
       describe("From the Favorites page", () => {
@@ -176,10 +174,10 @@ describe("Navigation", () => {
           cy.visit("/");
         });
 
-        //get first card in view, click on img
-        //get back icon & click
-        //url should not include /movies
-        //get h2 title & should contain Discover movies
+        // get first card in view, click on img
+        // get back icon & click
+        // url should not include /movies
+        // get h2 title & should contain Discover movies
         it("should navigate from home page to movie details and back", () => {
           cy.get(".card").eq(1).find("img").click();
           cy.get("svg[data-icon=arrow-circle-left]").click();
@@ -187,19 +185,65 @@ describe("Navigation", () => {
           cy.get("h2").contains("Discover Movies");
         });
 
-        //Clcik on button on first card - adds to favourites
-        //click on nav bar element 2(favorites)
-        //click on back icon
+        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(3).click();
+        Click on button on first card - adds to favourites
+        click on nav bar element 2(favorites)
+        click on back icon
         it("should navigate from favorites page to movie details and back", () => {
-            //!! Error with Navbar 
-            // cy.get(".card").eq(0).find("button").click();
-            // cy.get("nav").find(".item").eq(2).find("a").click();
-            // cy.get(".card").eq(0).find("img").click();
-            // cy.get("svg[data-icon=arrow-circle-left]").click();
-            // cy.url().should("include", `/movies`);
-            // cy.get("h2").contains("Favourite Movies");
+            cy.get(".card").eq(0).find("button").click();
+            cy.get("nav").get("div").eq(3).find("a").eq(2).click();
+            cy.get(".card").eq(0).find("img").click();
+            cy.get("svg[data-icon=arrow-circle-left]").click();
+            cy.url().should("include", `/movies`);
+            cy.get("h2").contains("Favorite Movies");
         });
 
+        //Watch List Movies to movie details and back
+        it("should navigate from watch list page to movie details and back", () => {
+          cy.visit("/movies/upcoming");
+          cy.get(".card").eq(0).find("button").click();
+          cy.get("nav").get("div").eq(3).find("a").eq(3).click();
+          cy.get(".card").eq(0).find("img").click();
+          cy.get("svg[data-icon=arrow-circle-left]").click();
+          cy.url().should("include", `/movies`);
+          cy.get("h2").contains("Watch List Movies");
+        });
+
+        //Now Playing Movies to movie details and back
+        it("should navigate from now playing page to movie details and back", () => {
+          cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(0).click();
+          cy.get(".card").eq(0).find("img").click();
+          cy.get("svg[data-icon=arrow-circle-left]").click();
+          cy.url().should("include", `/movies/nowplaying`);
+          cy.get("h2").contains("Now Playing Movies");
+        });
+
+        //Popular Movies to movie details and back
+        it("should navigate from popular page to movie details and back", () => {
+          cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(1).click();
+          cy.get(".card").eq(0).find("img").click();
+          cy.get("svg[data-icon=arrow-circle-left]").click();
+          cy.url().should("include", `/movies/popular`);
+          cy.get("h2").contains("Popular Movies");
+        });
+
+        //Top Rated Movies to movie details and back
+        it("should navigate from top rated page to movie details and back", () => {
+          cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(2).click();
+          cy.get(".card").eq(0).find("img").click();
+          cy.get("svg[data-icon=arrow-circle-left]").click();
+          cy.url().should("include", `/movies/toprated`);
+          cy.get("h2").contains("Top Rated Movies");
+        });
+
+        //Upcoming Movies to movie details and back
+        it("should navigate from upcoming page to movie details and back", () => {
+          cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(3).click();
+          cy.get(".card").eq(0).find("img").click();
+          cy.get("svg[data-icon=arrow-circle-left]").click();
+          cy.url().should("include", `/movies/upcoming`);
+          cy.get("h2").contains("Upcoming Movies");
+        });
     });
 
 });
