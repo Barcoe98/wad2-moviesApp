@@ -185,10 +185,9 @@ describe("Navigation", () => {
           cy.get("h2").contains("Discover Movies");
         });
 
-        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(3).click();
-        Click on button on first card - adds to favourites
-        click on nav bar element 2(favorites)
-        click on back icon
+        // Click on button on first card - adds to favourites
+        // click on nav bar element 2(favorites)
+        // click on back icon
         it("should navigate from favorites page to movie details and back", () => {
             cy.get(".card").eq(0).find("button").click();
             cy.get("nav").get("div").eq(3).find("a").eq(2).click();
