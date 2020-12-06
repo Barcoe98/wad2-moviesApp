@@ -12,7 +12,8 @@ export default ({ movie }) => {
     getMovieReviews(movie.id).then(reviews => {
       setReviews(reviews);
     });
-  }, []);
+  });
+  
   return (
     <table className="table table-hover">
       <thead>
