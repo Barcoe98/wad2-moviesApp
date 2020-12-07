@@ -1,7 +1,6 @@
 let movies;
 let upcomingMovies;
 
-
 let reviews;
 const movieId = 497582; // Enola Holmes movie id
 const reviewId = "5f69e4d0cee2f6003633becf"
@@ -64,56 +63,56 @@ describe("Navigation", () => {
       it("Navigate to Now Playing Movies", () => {
         //Now Playing Page
         cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(0).click();
-        cy.url().should("include", `/nowplaying`);
+        cy.url().should("include", `/movies/nowplaying`);
         cy.get("h2").contains("Now Playing Movies");
       });
       
       it("Navigate to Popular Movies", () => {
         //Popular Page
         cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(1).click();
-        cy.url().should("include", `/popular`);
+        cy.url().should("include", `/movies/popular`);
         cy.get("h2").contains("Popular Movies");
       });
         
       it("Navigate to Top Rated Movies", () => {
         //Top Rated Page
         cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(2).click();
-        cy.url().should("include", `/toprated`);
+        cy.url().should("include", `/movies/toprated`);
         cy.get("h2").contains("Top Rated Movies");
       });
 
       it("Navigate to Upcoming Movies", () => {
         //Upcoming Page
         cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(3).click();
-        cy.url().should("include", `/upcoming`);
+        cy.url().should("include", `/movies/upcoming`);
         cy.get("h2").contains("Upcoming Movies");
       });
 
       it("Navigate to Discover Movies / Home page", () => {
         //Discover Movies/Home Page
         cy.get("nav").get("div").eq(3).find("a").eq(3).click();
-        cy.url().should("not.include", `/favorites`);
+        cy.url().should("not.include", `/movies/favorites`);
         cy.get("h2").contains("Watch List Movies");
       });
 
       it("Navigate to Favourite Movies", () => {
         //Favourites Page
         cy.get("nav").get("div").eq(3).find("a").eq(2).click();
-        cy.url().should("include", `/favorites`);
+        cy.url().should("include", `/movies/favorites`);
         cy.get("h2").contains("Favorite Movies");
       });
 
       it("Navigate to Watch List Movies", () => {
         //Watch List Page
         cy.get("nav").get("div").eq(3).find("a").eq(3).click();
-        cy.url().should("include", `/watchlist`);
+        cy.url().should("include", `/movies/watchlist`);
         cy.get("h2").contains("Watch List Movies");
       });
 
       it("Navigate to Home From Nav Brand", () => {
         //check nav brand
         cy.get("nav").find("div").eq(2).find("a").click();
-        cy.url().should("not.include", `/favorites`);
+        cy.url().should("not.include", `/movies/favorites`);
         cy.get("h2").contains("Discover Movies");  
       })
     });
