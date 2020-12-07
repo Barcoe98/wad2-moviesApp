@@ -2,6 +2,8 @@ let movieId = null
 let movie;
 let reviews;
 
+/* eslint-disable */
+
 describe("Movie Details Page", () => {
   before(() => {
     cy.request(

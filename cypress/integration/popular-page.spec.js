@@ -8,6 +8,7 @@ const filterByTitle = (movieList, string) =>
 const filterByGenre = (movieList, genreId) =>
   movieList.filter((m) => m.genre_ids.includes(genreId));
   
+  /* eslint-disable */
   describe("Popular Movies Page", () => {
     before(() => {
         // Get popular movies from TMDB and store in movies variable.

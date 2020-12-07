@@ -28,13 +28,13 @@ const App = () => {
         <MoviesContextProvider> 
         <GenresContextProvider>    
             <Switch>
-              <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-              <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-              <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
-              <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
-              <Route exact path="/movies/nowplaying" component={nowPlayingMoviesPage} />
-              <Route exact path="/movies/toprated" component={TopRatedMoviesPage} />
-              <Route exact path="/movies/popular" component={PopularMoviesPage} />
+              <Route path="/reviews/form" component={AddMovieReviewPage} />
+              <Route path="/movies/favorites" component={FavoriteMoviesPage} />
+              <Route path="/movies/watchlist" component={WatchListMoviesPage} />
+              <Route path="/movies/upcoming" component={UpcomingMoviesPage} />
+              <Route path="/movies/nowplaying" component={nowPlayingMoviesPage} />
+              <Route path="/movies/toprated" component={TopRatedMoviesPage} />
+              <Route path="/movies/popular" component={PopularMoviesPage} />
               <Route path="/reviews/:id" component={MovieReviewPage} />
               <Route path="/movies/:id" component={MoviePage} />
               <Route path="/" component={HomePage} />

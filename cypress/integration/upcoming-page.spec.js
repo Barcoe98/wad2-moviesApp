@@ -8,6 +8,7 @@ const filterByTitle = (movieList, string) =>
 const filterByGenre = (movieList, genreId) =>
   movieList.filter((m) => m.genre_ids.includes(genreId));
   
+  /* eslint-disable */
   describe("Upcoming Movies Page", () => {
     before(() => {
         // Get Upcoming movies from TMDB and store in movies variable.

@@ -8,6 +8,7 @@ const filterByTitle = (movieList, string) =>
 const filterByGenre = (movieList, genreId) =>
   movieList.filter((m) => m.genre_ids.includes(genreId));
   
+  /* eslint-disable */
   describe("Watch List Page", () => {
     before(() => {
         // Get movies from TMDB and store in movies variable.
@@ -21,6 +22,8 @@ const filterByGenre = (movieList, genreId) =>
             //store results in varaible movies
             movies = response.results
           })
+
+          cy.visit("/")
       })
 
     beforeEach(() => {
