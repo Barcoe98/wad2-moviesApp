@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import ReactDOM from "react-dom";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./app.css"
@@ -11,12 +11,18 @@ import UpcomingMoviesPage from './pages/upcomingMoviesPage'
 import TopRatedMoviesPage from './pages/topRatedMoviesPage'
 import PopularMoviesPage from './pages/popularMoviesPage'
 import nowPlayingMoviesPage from './pages/nowPlayingMoviesPage'
-
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
+import AddMovieReviewPage from './pages/addMovieReviewPage'
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
-import AddMovieReviewPage from './pages/addMovieReviewPage'
+import AuthContextProvider from "./contexts/authContext";
+import LoginPage from './pages/loginPage'
+import SignUpPage from './pages/SignUpPage'
+import DashboardPage from './pages/dashboardPage'
+import ForgotPasswordPage from './pages/forgotPasswordPage'
+import UpdateProfilePage from './pages/updateProfilePage'
+import PrivateRoute from './pages/privateRoute';
 
 const App = () => {
   return (
@@ -25,23 +31,30 @@ const App = () => {
     <div className ="page-template">
       <SiteHeader /> 
       <div className="container-fluid">
+        <AuthContextProvider>
         <MoviesContextProvider> 
         <GenresContextProvider>    
             <Switch>
-              <Route path="/reviews/form" component={AddMovieReviewPage} />
-              <Route path="/movies/favorites" component={FavoriteMoviesPage} />
-              <Route path="/movies/watchlist" component={WatchListMoviesPage} />
-              <Route path="/movies/upcoming" component={UpcomingMoviesPage} />
-              <Route path="/movies/nowplaying" component={nowPlayingMoviesPage} />
-              <Route path="/movies/toprated" component={TopRatedMoviesPage} />
-              <Route path="/movies/popular" component={PopularMoviesPage} />
+              <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
+              <PrivateRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
+              <PrivateRoute exact path="/movies/watchlist" component={WatchListMoviesPage} />
+              <PrivateRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+              <PrivateRoute exact path="/movies/nowplaying" component={nowPlayingMoviesPage} />
+              <PrivateRoute exact path="/movies/toprated" component={TopRatedMoviesPage} />
+              <PrivateRoute exact path="/movies/popular" component={PopularMoviesPage} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/signup" component={SignUpPage} /> 
+              <Route path="/forgot-password" component={ForgotPasswordPage} /> 
+              <PrivateRoute exact path="/dashboard" component={DashboardPage}/>
+              <PrivateRoute exact path="/update-profile" component={UpdateProfilePage}/>
               <Route path="/reviews/:id" component={MovieReviewPage} />
               <Route path="/movies/:id" component={MoviePage} />
-              <Route path="/" component={HomePage} />
+              <Route exact path="/" component={HomePage} />
           <Redirect from="*" to="/" />
           </Switch>
           </GenresContextProvider>    
-          </MoviesContextProvider>     
+          </MoviesContextProvider>  
+          </AuthContextProvider>   
         </div>
       </div>
       </BrowserRouter>

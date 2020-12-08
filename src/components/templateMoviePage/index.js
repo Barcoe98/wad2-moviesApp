@@ -3,7 +3,6 @@ import MovieHeader from '../headerMovie'
 import "./moviePage.css";
 //import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 //Template for movie Details Page
 
 const TemplateMoviePage = ({ movie, children }) => {

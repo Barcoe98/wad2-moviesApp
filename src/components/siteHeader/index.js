@@ -30,6 +30,12 @@ const SiteHeader = () => {
 
       <Nav.Item><Link className="nav-link text-dark" to="/movies/favorites"> FAVOURITES</Link></Nav.Item>
       <Nav.Item><Link className="nav-link text-dark" to="/movies/watchlist"> WATCH LIST</Link></Nav.Item>
+
+      <Nav.Item><Link className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
+      <Nav.Item><Link className="nav-link text-dark" to="/signup"> SIGN UP</Link></Nav.Item>
+      <Nav.Item><Link className="nav-link text-dark" to="/dashboard"> DASHBOARD</Link></Nav.Item>
+
+
   </Nav>
   </Navbar.Collapse>
 </Navbar>
