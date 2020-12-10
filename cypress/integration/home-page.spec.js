@@ -37,7 +37,7 @@ const filterByGenre = (movieList, genreId) =>
 
     describe("Filtering", () => {
       describe("By movie title" ,() => {
-        it("should display movies with 'p ' in the title", () => {
+        it("should display movies with 'p' in the title", () => {
           const searchString = 'p'
           const matchingMovies = filterByTitle(movies, searchString );
           cy.get("input").clear().type(searchString) ;
