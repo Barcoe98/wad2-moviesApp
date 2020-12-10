@@ -26,7 +26,8 @@ const filterByGenre = (movieList, genreId) =>
 
     beforeEach(() => {
         //forces refresh before each test
-      cy.visit("/movies/nowplaying");
+      cy.visit("/");
+      cy.visit("movies/nowplaying");
     });
   
     //Check if page header has changed to "Now Playing Movies"
