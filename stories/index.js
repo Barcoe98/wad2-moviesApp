@@ -14,6 +14,8 @@ import ActorCard from "../src/components/actorCard";
 import Header from "../src/components/headeActorList";
 import FilterControlsActor from "../src/components/filterControlsActor";
 import ActorList from "../src/components/actorList";
+import ActorDetails from "../src/components/actorDetails";
+
 
 
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
@@ -190,6 +192,22 @@ storiesOf("Actor List Pages/Actor List", module)
       />
     );
   });
+
+
+/* Story for diplaying Actor Details*/
+storiesOf("Actor Details Page/Actor Details", module)
+.add("default", () => (
+  <ActorDetails actor={sampleActor} />
+));
+
+//Story for Movie Header 
+storiesOf("Actor Details Page/Actor Header", module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => <MovieHeader movie={sample} />);
+
+
 
 
 
