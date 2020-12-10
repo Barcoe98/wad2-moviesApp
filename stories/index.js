@@ -9,8 +9,9 @@ import MovieDetails from "../src/components/movieDetails";
 import MovieHeader from "../src/components/headerMovie";
 import MovieReviews from "../src/components/movieReviews";
 import MovieReview from "../src/components/movieReview";
+
 import ActorCard from "../src/components/actorCard";
-//import ActorList from "../src/components/actorCard";
+import ActorHeader from "../src/components/headeActorList";
 
 
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
@@ -132,8 +133,8 @@ const sampleActor = {
   homepage: null
 }
 
-//Story for home page with movie card
-//movie card tat show movie poster and default poster
+//Story for actor card
+//actor card that show actor profile poster and default poster
 storiesOf("Actor List Pages/Actor Card", module)
   .addDecorator(story => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
@@ -147,10 +148,10 @@ storiesOf("Actor List Pages/Actor Card", module)
     />
   ))
   .add("exception", () => {
-    const sampleNoPoster = { ...sampleActor, poster_path: undefined };
+    const sampleNoPoster = { ...sampleActor, profile_path: undefined };
     return (
       <ActorCard
-        movie={sampleNoPoster}
+        actor={sampleNoPoster}
         action={actor => (
           <button className="btn">
              Test Button
@@ -159,6 +160,11 @@ storiesOf("Actor List Pages/Actor Card", module)
       />
     );
   });
+
+// Story For Movie Header
+storiesOf("Actor List Pages/ Page Header", module).add("default", () => (
+  <ActorHeader title="Popular Actors" numActors={10} />
+));
 
 //Story for home page with movie card
 //movie card tat show movie poster and default poster
