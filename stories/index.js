@@ -11,7 +11,7 @@ import MovieReviews from "../src/components/movieReviews";
 import MovieReview from "../src/components/movieReview";
 
 import ActorCard from "../src/components/actorCard";
-import ActorHeader from "../src/components/headeActorList";
+import Header from "../src/components/headeActorList";
 import FilterControlsActor from "../src/components/filterControlsActor";
 import ActorList from "../src/components/actorList";
 
@@ -141,7 +141,7 @@ storiesOf("Actor List Pages/Filter Controls", module)
 
 // Story For Movie Header
 storiesOf("Actor List Pages/ Page Header", module).add("default", () => (
-  <ActorHeader title="Popular Actors" numActors={10} />
+  <Header title="Popular Actors" numActors={10} />
 ));
 
 //Story for actor card
@@ -190,6 +190,8 @@ storiesOf("Actor List Pages/Actor List", module)
       />
     );
   });
+
+
 
 //Story for home page with movie card
 //movie card tat show movie poster and default poster

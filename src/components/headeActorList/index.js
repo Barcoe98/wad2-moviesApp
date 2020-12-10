@@ -1,7 +1,7 @@
 import React from "react";
 import "./headerActorList.css";
 
-const ActorHeader = ({ title, numActors }) => {
+const Header = ({ title, numActors }) => {
   return (
     <div className="row">
       <div>
@@ -14,4 +14,4 @@ const ActorHeader = ({ title, numActors }) => {
   );
 };
 
-export default ActorHeader;
+export default Header;

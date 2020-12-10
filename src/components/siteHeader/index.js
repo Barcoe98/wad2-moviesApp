@@ -28,6 +28,8 @@ const SiteHeader = () => {
         <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/upcoming"> UPCOMING</Link></NavDropdown.Item>
       </NavDropdown>
 
+      <Nav.Item><Link className="nav-link text-dark" to="/movies/actors"> ACTORS</Link></Nav.Item>
+
       <Nav.Item><Link className="nav-link text-dark" to="/movies/favorites"> FAVOURITES</Link></Nav.Item>
       <Nav.Item><Link className="nav-link text-dark" to="/movies/watchlist"> WATCH LIST</Link></Nav.Item>
 

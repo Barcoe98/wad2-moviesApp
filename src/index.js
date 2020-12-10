@@ -11,12 +11,17 @@ import UpcomingMoviesPage from './pages/upcomingMoviesPage'
 import TopRatedMoviesPage from './pages/topRatedMoviesPage'
 import PopularMoviesPage from './pages/popularMoviesPage'
 import nowPlayingMoviesPage from './pages/nowPlayingMoviesPage'
+import ActorsPage from './pages/actorsPage'
+
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import AddMovieReviewPage from './pages/addMovieReviewPage'
+
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
 import AuthContextProvider from "./contexts/authContext";
+import ActorsContextProvider from "./contexts/actorsContext";
+
 import LoginPage from './pages/loginPage'
 import SignUpPage from './pages/SignUpPage'
 import DashboardPage from './pages/dashboardPage'
@@ -33,6 +38,7 @@ const App = () => {
       <div className="container-fluid">
         <AuthContextProvider>
         <MoviesContextProvider> 
+        <ActorsContextProvider>
         <GenresContextProvider>    
             <Switch>
               <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
@@ -42,6 +48,8 @@ const App = () => {
               <PrivateRoute exact path="/movies/nowplaying" component={nowPlayingMoviesPage} />
               <PrivateRoute exact path="/movies/toprated" component={TopRatedMoviesPage} />
               <PrivateRoute exact path="/movies/popular" component={PopularMoviesPage} />
+              <Route path="/movies/actors" component={ActorsPage} />
+
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={SignUpPage} /> 
               <Route path="/forgot-password" component={ForgotPasswordPage} /> 
@@ -52,7 +60,8 @@ const App = () => {
               <Route exact path="/" component={HomePage} />
           <Redirect from="*" to="/" />
           </Switch>
-          </GenresContextProvider>    
+          </GenresContextProvider> 
+          </ActorsContextProvider>   
           </MoviesContextProvider>  
           </AuthContextProvider>   
         </div>

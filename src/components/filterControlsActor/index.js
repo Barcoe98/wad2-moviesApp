@@ -1,7 +1,7 @@
 import React from "react";
 import "./filterControls.css";
 
-const FilterControlsActor = props => {
+const FilterControls = props => {
 
   const handleChange = (e, type, value) => {
     e.preventDefault();
@@ -27,4 +27,4 @@ const FilterControlsActor = props => {
   );
 };
 
-export default FilterControlsActor;
+export default FilterControls;
