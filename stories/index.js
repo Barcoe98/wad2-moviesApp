@@ -13,6 +13,8 @@ import MovieReview from "../src/components/movieReview";
 import ActorCard from "../src/components/actorCard";
 import ActorHeader from "../src/components/headeActorList";
 import FilterControlsActor from "../src/components/filterControlsActor";
+import ActorList from "../src/components/actorList";
+
 
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
@@ -170,7 +172,24 @@ storiesOf("Actor List Pages/Actor Card", module)
     );
   });
 
-
+//Story for Actor List
+storiesOf("Actor List Pages/Actor List", module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => {
+    const actors = [sampleActor, sampleActor, sampleActor, sampleActor, sampleActor];
+    return (
+      <ActorList
+        actors={actors}
+        action={actor => (
+          <button className="btn w-100">
+            Test Button
+            </button>
+        )}
+      />
+    );
+  });
 
 //Story for home page with movie card
 //movie card tat show movie poster and default poster
