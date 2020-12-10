@@ -12,7 +12,7 @@ import MovieReview from "../src/components/movieReview";
 
 import ActorCard from "../src/components/actorCard";
 import ActorHeader from "../src/components/headeActorList";
-
+import FilterControlsActor from "../src/components/filterControlsActor";
 
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
@@ -21,7 +21,6 @@ import { action } from "@storybook/addon-actions";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Login from "../src/components/authentication/login";
 import SignUp from "../src/components/authentication/signUp";
-import LoginPage from "../src/pages/loginPage";
 
 
 const sample = {
@@ -104,7 +103,6 @@ const sample = {
   vote_average: 7,
   vote_count: 9692
 };
-
 const sampleActor = {
   birthday: "1963-12-18",
   known_for_department: "Acting",
@@ -132,6 +130,17 @@ const sampleActor = {
   imdb_id: "nm0000093",
   homepage: null
 }
+
+//Story for Filter controls on Actor List Pages 
+storiesOf("Actor List Pages/Filter Controls", module)
+  .add("default", () => (
+    <FilterControlsActor onUserInput={action("button-click")} numActors={10} />
+  ));
+
+// Story For Movie Header
+storiesOf("Actor List Pages/ Page Header", module).add("default", () => (
+  <ActorHeader title="Popular Actors" numActors={10} />
+));
 
 //Story for actor card
 //actor card that show actor profile poster and default poster
@@ -161,10 +170,7 @@ storiesOf("Actor List Pages/Actor Card", module)
     );
   });
 
-// Story For Movie Header
-storiesOf("Actor List Pages/ Page Header", module).add("default", () => (
-  <ActorHeader title="Popular Actors" numActors={10} />
-));
+
 
 //Story for home page with movie card
 //movie card tat show movie poster and default poster
@@ -188,7 +194,6 @@ storiesOf("Movie List Pages/Movie Card", module)
         action={movie => (
           <button className="btn">
             <FontAwesomeIcon icon={["fas", "star"]} />
-
           </button>
         )}
       />
