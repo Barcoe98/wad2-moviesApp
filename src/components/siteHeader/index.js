@@ -7,38 +7,38 @@ import {  Navbar, Nav, NavDropdown } from 'react-bootstrap';
 
 const SiteHeader = () => {
   return (
-  <Navbar collapseOnSelect variant="dark" expand="lg" fixed="top">
+  <Navbar collapseOnSelect variant="dark"expand="lg" fixed="top">
     <FontAwesomeIcon
-        className="navbar-text text-light"
+        className="navbar-text text-dark"
         icon={["fas", "film"]}
         size="3x"
+        to ="/"
       />
-  <Navbar.Brand className="brand" href="/">TMDB</Navbar.Brand>
+  <Navbar.Brand className="text-dark brand " href="/">TMDB</Navbar.Brand>
   
-  <Navbar.Toggle aria-controls="basic-navbar-nav" />
-  <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="ml-auto">
-
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto">
       <Nav.Item><Link className="nav-link text-dark" to="/"> HOME</Link></Nav.Item>
 
-      <NavDropdown className="text-dark" title="MOVIES" id="basic-nav-dropdown">
-        <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/nowplaying"> NOW PLAYING</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/popular"> POPULAR</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/toprated"> TOP RATED</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="nav-link text-dark" to="/movies/upcoming"> UPCOMING</Link></NavDropdown.Item>
+      <NavDropdown className="text-dark" title="MOVIES" id="responsive-nav-dropdown">
+        <NavDropdown.Item><Link className="text-dark" to="/movies/nowplaying"> NOW PLAYING</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link className="text-dark" to="/movies/popular"> POPULAR</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link className="text-dark" to="/movies/toprated"> TOP RATED</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link className="text-dark" to="/movies/upcoming"> UPCOMING</Link></NavDropdown.Item>
       </NavDropdown>
 
       <Nav.Item><Link className="nav-link text-dark" to="/movies/actors"> ACTORS</Link></Nav.Item>
-
       <Nav.Item><Link className="nav-link text-dark" to="/movies/favorites"> FAVOURITES</Link></Nav.Item>
       <Nav.Item><Link className="nav-link text-dark" to="/movies/watchlist"> WATCH LIST</Link></Nav.Item>
-
-      <Nav.Item><Link className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
-      <Nav.Item><Link className="nav-link text-dark" to="/signup"> SIGN UP</Link></Nav.Item>
-      <Nav.Item><Link className="nav-link text-dark" to="/dashboard"> DASHBOARD</Link></Nav.Item>
-
-
   </Nav>
+
+  <Nav className="mr-sm-2">
+    <Nav.Item><Link className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
+    <Nav.Item><Link className="nav-link text-dark" to="/signup"> SIGN UP</Link></Nav.Item>
+    <Nav.Item ><Link className="nav-link text-dark" to="/dashboard"> DASHBOARD</Link></Nav.Item>
+  </Nav>
+  
   </Navbar.Collapse>
 </Navbar>
   )

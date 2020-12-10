@@ -50,8 +50,8 @@ const App = () => {
               <PrivateRoute exact path="/movies/nowplaying" component={nowPlayingMoviesPage} />
               <PrivateRoute exact path="/movies/toprated" component={TopRatedMoviesPage} />
               <PrivateRoute exact path="/movies/popular" component={PopularMoviesPage} />
-              <Route path="/movies/actors" component={ActorsPage} />
-              <Route path="/actors/:id" component={ActorPage} />
+              <PrivateRoute path="/movies/actors" component={ActorsPage} />
+              <PrivateRoute path="/actors/:id" component={ActorPage} />
 
 
               <Route path="/login" component={LoginPage} />
@@ -59,9 +59,9 @@ const App = () => {
               <Route path="/forgot-password" component={ForgotPasswordPage} /> 
               <PrivateRoute exact path="/dashboard" component={DashboardPage}/>
               <PrivateRoute exact path="/update-profile" component={UpdateProfilePage}/>
-              <Route path="/reviews/:id" component={MovieReviewPage} />
-              <Route path="/movies/:id" component={MoviePage} />
-              <Route exact path="/" component={HomePage} />
+              <PrivateRoute path="/reviews/:id" component={MovieReviewPage} />
+              <PrivateRoute path="/movies/:id" component={MoviePage} />
+              <PrivateRoute exact path="/" component={HomePage} />
           <Redirect from="*" to="/" />
           </Switch>
           </GenresContextProvider> 

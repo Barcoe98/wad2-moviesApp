@@ -1,7 +1,6 @@
 /* Site Nav Bar */
 /* top - right - bottom - left */
 .fixed-top {
-    color: black;
     padding: 10px 5px 10px 40px ;
     background-color:#009DFF;
     font-size: large;
