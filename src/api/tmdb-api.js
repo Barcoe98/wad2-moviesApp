@@ -66,6 +66,12 @@
       .then(json => json.genres);
   };
 
+  export const getActor = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    ).then(res => res.json());
+  };
+
   export const getMovieReviews = id => {
     return fetch(
       `https://api.themoviedb.org/3/movie/${id}/reviews?api_key=${process.env.REACT_APP_TMDB_KEY}`

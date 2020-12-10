@@ -12,6 +12,8 @@ import TopRatedMoviesPage from './pages/topRatedMoviesPage'
 import PopularMoviesPage from './pages/popularMoviesPage'
 import nowPlayingMoviesPage from './pages/nowPlayingMoviesPage'
 import ActorsPage from './pages/actorsPage'
+import ActorPage from './pages/actorDetailsPage'
+
 
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
@@ -49,6 +51,8 @@ const App = () => {
               <PrivateRoute exact path="/movies/toprated" component={TopRatedMoviesPage} />
               <PrivateRoute exact path="/movies/popular" component={PopularMoviesPage} />
               <Route path="/movies/actors" component={ActorsPage} />
+              <Route path="/actors/:id" component={ActorPage} />
+
 
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={SignUpPage} /> 
