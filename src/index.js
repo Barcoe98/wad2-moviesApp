@@ -21,15 +21,15 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
-import AuthContextProvider from "./contexts/authContext";
+// import AuthContextProvider from "./contexts/authContext";
 import ActorsContextProvider from "./contexts/actorsContext";
 
-import LoginPage from './pages/loginPage'
-import SignUpPage from './pages/SignUpPage'
-import DashboardPage from './pages/dashboardPage'
-import ForgotPasswordPage from './pages/forgotPasswordPage'
-import UpdateProfilePage from './pages/updateProfilePage'
-import PrivateRoute from './pages/privateRoute';
+// import LoginPage from './pages/loginPage'
+// import SignUpPage from './pages/SignUpPage'
+// import DashboardPage from './pages/dashboardPage'
+// import ForgotPasswordPage from './pages/forgotPasswordPage'
+// import UpdateProfilePage from './pages/updateProfilePage'
+// import PrivateRoute from './pages/privateRoute';
 
 const App = () => {
   return (
@@ -38,7 +38,7 @@ const App = () => {
     <div className ="page-template">
       <SiteHeader /> 
       <div className="container-fluid">
-        <AuthContextProvider>
+        {/* <AuthContextProvider> */}
         <MoviesContextProvider> 
         <ActorsContextProvider>
         <GenresContextProvider>    
@@ -54,11 +54,11 @@ const App = () => {
               <Route path="/actors/:id" component={ActorPage} />
 
 
-              <Route path="/login" component={LoginPage} />
+              {/* <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={SignUpPage} /> 
               <Route path="/forgot-password" component={ForgotPasswordPage} /> 
               <PrivateRoute exact path="/dashboard" component={DashboardPage}/>
-              <PrivateRoute exact path="/update-profile" component={UpdateProfilePage}/>
+              <PrivateRoute exact path="/update-profile" component={UpdateProfilePage}/> */}
               <Route path="/reviews/:id" component={MovieReviewPage} />
               <Route path="/movies/:id" component={MoviePage} />
               <Route exact path="/" component={HomePage} />
@@ -67,7 +67,7 @@ const App = () => {
           </GenresContextProvider> 
           </ActorsContextProvider>   
           </MoviesContextProvider>  
-          </AuthContextProvider>   
+          {/* </AuthContextProvider>    */}
         </div>
       </div>
       </BrowserRouter>
