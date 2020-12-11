@@ -9,39 +9,29 @@
   }
 
 .card {
-    border-color: #444;
-    background-color: #009dff;
+    border-color: #333;
+    background-color: #333;
     border-radius: 10px;
     margin-top: 10px;
     padding-top: 10px;
     text-align: center;
   }
 
-.card-title {
-    text-align: center;
-    color: whitesmoke;
-    font-size: large;
+.card-title-m {
+  text-align: center;
+  color: #333;
+  font-size: large;
+  background-color: gold;
   }
 
 .btn {
     font-size: 0.8em;
-    background-color: #333;
+    background-color: #222;
     color: gold;
     text-align: center;
     margin-bottom: 10px;
   }
 
-  /* .container .btn {
-    position: absolute;
-    bottom: 16%;
-    left: 26%;
-    padding: 2%;
-    font-size: small;
-    background-color: #333;
-    color: gold;
-    cursor: pointer;
-    border-radius: 5px;
-  } */
   
   .container .btn:hover {
     color: white;

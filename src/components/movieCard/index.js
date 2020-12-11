@@ -9,6 +9,7 @@ const MovieCard = ({movie, action}) => {
     <div className="col-sm-2">
       <div className="card">
       <div className="container">
+      
         <Link to={`/movies/${movie.id}`}>
       <img
       className="card-img-tag center"
@@ -20,13 +21,9 @@ const MovieCard = ({movie, action}) => {
       }
       />
       </Link>
-      
-      <div>
-      <h4 className="card-title">{movie.title}</h4>
-           {action(movie)}
-        </div>
+      <h4 className="card-title-m">{movie.title}</h4>
+      {action(movie)}
       </div>
-       
       </div>
     </div>
   );
