@@ -26,7 +26,8 @@ const filterByGenre = (movieList, genreId) =>
 
     beforeEach(() => {
         //forces refresh before each test
-      cy.visit("/movies/upcoming");
+        cy.visit("/");
+        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(3).click();
     });
   
     //Check if page header has cahnged to "Upcoming Movies"
