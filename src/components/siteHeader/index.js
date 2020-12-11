@@ -18,7 +18,7 @@ const SiteHeader = () => {
   
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="mr-auto">
+    <Nav className="ml-auto">
       <Nav.Item><Link className="nav-link text-dark" to="/"> HOME</Link></Nav.Item>
 
       <NavDropdown className="text-dark" title="MOVIES" id="responsive-nav-dropdown">
@@ -28,9 +28,16 @@ const SiteHeader = () => {
         <NavDropdown.Item><Link className="text-dark" to="/movies/upcoming"> UPCOMING</Link></NavDropdown.Item>
       </NavDropdown>
 
-      <Nav.Item><Link className="nav-link text-dark" to="/movies/actors"> ACTORS</Link></Nav.Item>
-      <Nav.Item><Link className="nav-link text-dark" to="/movies/favorites"> FAVOURITES</Link></Nav.Item>
-      <Nav.Item><Link className="nav-link text-dark" to="/movies/watchlist"> WATCH LIST</Link></Nav.Item>
+      <NavDropdown className="text-dark" title="PEOPLE" id="responsive-nav-dropdown">
+        <NavDropdown.Item><Link className="text-dark" to="/actors/popular"> POPULAR</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link className="text-dark" to="/actors/popular"> LATEST</Link></NavDropdown.Item>
+      </NavDropdown>
+
+      <NavDropdown className="text-dark" title="MY TMDB" id="responsive-nav-dropdown">
+        <NavDropdown.Item><Link className="text-dark" to="/movies/favorites"> FAVOURITES</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link className="text-dark" to="/movies/watchlist"> WATCH LIST</Link></NavDropdown.Item>
+      </NavDropdown>
+
   </Nav>
 
   {/* <Nav className="mr-sm-2">
