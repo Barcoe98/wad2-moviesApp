@@ -21,30 +21,30 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
-// import AuthContextProvider from "./contexts/authContext";
+import AuthContextProvider from "./contexts/authContext";
 import ActorsContextProvider from "./contexts/actorsContext";
 
-// import LoginPage from './pages/loginPage'
-// import SignUpPage from './pages/SignUpPage'
-// import DashboardPage from './pages/dashboardPage'
-// import ForgotPasswordPage from './pages/forgotPasswordPage'
-// import UpdateProfilePage from './pages/updateProfilePage'
-// import PrivateRoute from './pages/privateRoute';
+import LoginPage from './pages/loginPage'
+import SignUpPage from './pages/SignUpPage'
+import DashboardPage from './pages/dashboardPage'
+import ForgotPasswordPage from './pages/forgotPasswordPage'
+import UpdateProfilePage from './pages/updateProfilePage'
+import PrivateRoute from './pages/privateRoute';
 
 const App = () => {
   return (
     <div className = "page-temp">
     <BrowserRouter>
     <div className ="page-template">
-      <SiteHeader /> 
       <div className="container-fluid">
-        {/* <AuthContextProvider> */}
+        <AuthContextProvider>
+        <SiteHeader /> 
         <MoviesContextProvider> 
         <ActorsContextProvider>
         <GenresContextProvider>    
             <Switch>
-              <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-              <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+              <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
+              <PrivateRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
               <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
               <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
               <Route exact path="/movies/nowplaying" component={nowPlayingMoviesPage} />
@@ -52,13 +52,11 @@ const App = () => {
               <Route exact path="/movies/popular" component={PopularMoviesPage} />
               <Route exact path="/actors/popular" component={ActorsPage} />
               <Route path="/actors/:id" component={ActorPage} />
-
-
-              {/* <Route path="/login" component={LoginPage} />
+              <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={SignUpPage} /> 
               <Route path="/forgot-password" component={ForgotPasswordPage} /> 
               <PrivateRoute exact path="/dashboard" component={DashboardPage}/>
-              <PrivateRoute exact path="/update-profile" component={UpdateProfilePage}/> */}
+              <PrivateRoute exact path="/update-profile" component={UpdateProfilePage}/>
               <Route path="/reviews/:id" component={MovieReviewPage} />
               <Route path="/movies/:id" component={MoviePage} />
               <Route exact path="/" component={HomePage} />
@@ -67,7 +65,7 @@ const App = () => {
           </GenresContextProvider> 
           </ActorsContextProvider>   
           </MoviesContextProvider>  
-          {/* </AuthContextProvider>    */}
+          </AuthContextProvider>   
         </div>
       </div>
       </BrowserRouter>

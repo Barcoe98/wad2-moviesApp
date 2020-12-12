@@ -2,15 +2,16 @@ import React, { useContext, useState, useEffect} from "react";
 import { auth } from "../firebase"
 
 
-export const AuthContext = React.createContext()
+const AuthContext = React.createContext()
 
 export const useAuth = () => {
     return useContext(AuthContext)
 }
 
-const AuthContextProvider = ({children}) => {
+const AuthContextProvider = (props) => {
     const [currentUser, setCurrentUser] = useState()
     const [loading, setLoading] = useState(true)
+    const [isLoggedIn, setLoggedIn] = useState(false)
     
     //takes in email and password//creates user with email and password spcecified
     function signUp (email, password) {
@@ -24,6 +25,7 @@ const AuthContextProvider = ({children}) => {
 
     //logs out current user
     function logOut() {
+        setLoggedIn(false)
         return auth.signOut()
     }
 
@@ -51,6 +53,8 @@ const AuthContextProvider = ({children}) => {
 
     const value = {
         currentUser,
+        isLoggedIn,
+        setLoggedIn,
         signUp,
         login,
         logOut,
@@ -63,7 +67,7 @@ const AuthContextProvider = ({children}) => {
     return (
         <AuthContext.Provider 
         value = {value}  >
-        {!loading && children}
+        {!loading && props.children}
         </AuthContext.Provider>
     )
 }

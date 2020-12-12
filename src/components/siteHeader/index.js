@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./siteHeader.css";
 import {  Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import {useAuth} from "../../contexts/authContext"
 
 const SiteHeader = () => {
-  return (
+  
+  const context = useAuth();
+
+  return context.isLoggedIn ? (
   <Navbar collapseOnSelect variant="dark"expand="lg" fixed="top">
     <FontAwesomeIcon
         className="navbar-text text-dark"
@@ -38,16 +42,39 @@ const SiteHeader = () => {
         <NavDropdown.Item><Link className="text-dark" to="/movies/watchlist"> WATCH LIST</Link></NavDropdown.Item>
       </NavDropdown>
 
+      <Nav.Item ><Link className="nav-link text-dark" to="/dashboard"> DASHBOARD</Link></Nav.Item>
+
   </Nav>
 
-  {/* <Nav className="mr-sm-2">
-    <Nav.Item><Link className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
-    <Nav.Item><Link className="nav-link text-dark" to="/signup"> SIGN UP</Link></Nav.Item>
-    <Nav.Item ><Link className="nav-link text-dark" to="/dashboard"> DASHBOARD</Link></Nav.Item>
-  </Nav> */}
+  
   
   </Navbar.Collapse>
 </Navbar>
+
+  ) : (
+
+    <Navbar collapseOnSelect variant="dark"expand="lg" fixed="top">
+    <FontAwesomeIcon
+        className="navbar-text text-dark"
+        icon={["fas", "film"]}
+        size="3x"
+        to ="/"
+      />
+  <Navbar.Brand className="text-dark brand " href="/">TMDB</Navbar.Brand>
+  
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="ml-auto">
+      <Nav.Item><Link className="nav-link text-dark" to="/"> HOME</Link></Nav.Item>
+    <Nav.Item><Link className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
+    <Nav.Item><Link className="nav-link text-dark" to="/signup"> SIGN UP</Link></Nav.Item>
+  </Nav>
+
+  
+  
+  </Navbar.Collapse>
+</Navbar>
+  
   )
 }
 

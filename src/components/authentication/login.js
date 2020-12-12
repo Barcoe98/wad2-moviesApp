@@ -10,7 +10,8 @@ export const Login = () => {
     const { login } = useAuth()
     const [ error, setError ] = useState("")
     const [ loading, setLoading ] = useState(false)
-    const history = useHistory()
+    const history = useHistory();
+    const { setLoggedIn} = useAuth();
 
 
     async function handleSubmit(e) {
@@ -20,10 +21,12 @@ export const Login = () => {
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value )
+            setLoggedIn(true)
             history.push("/")
         } 
         catch { 
             setError ( 'Failed to Sign in ')
+            setLoggedIn(false)
         }
         setLoading(false)
     }
