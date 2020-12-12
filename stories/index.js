@@ -10,13 +10,14 @@ import MovieHeader from "../src/components/headerMovie";
 import MovieReviews from "../src/components/movieReviews";
 import MovieReview from "../src/components/movieReview";
 
-import ActorCard from "../src/components/actorCard";
+import MovieCreditCard from "../src/components/movieCreditCard";
+import MovieCreditList from "../src/components/movieCreditList";
+
 import Header from "../src/components/headeActorList";
 import FilterControlsActor from "../src/components/filterControlsActor";
+import ActorCard from "../src/components/actorCard";
 import ActorList from "../src/components/actorList";
 import ActorDetails from "../src/components/actorDetails";
-
-
 
 import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
@@ -133,7 +134,49 @@ const sampleActor = {
   adult: false,
   imdb_id: "nm0000093",
   homepage: null
-}
+};
+const sampleMovieCredits = {
+  "original_title": "Megamind",
+  "popularity": 5.329891,
+  "id": 38055,
+  "backdrop_path": "/o6anuGPog9853CPiaPQEMmdBVT0.jpg",
+  "overview": "Bumbling supervillain Megamind finally defeats his nemesis, the superhero Metro Man. But without a hero, he loses all purpose and must find new meaning to his life.",
+  poster_path: "/amXAUSAUrnGuLGEyc1ZNhBvgbnF.jpg"
+};
+
+storiesOf("Movie Credits List Pages/ Movie Credit Card", module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => (
+    <MovieCreditCard
+    movieCredit={sampleMovieCredits}
+    />
+  ))
+  .add("exception", () => {
+    const sampleNoPoster = { ...sampleActor, profile_path: undefined };
+    return (
+      <MovieCreditCard
+      movieCredit={sampleNoPoster}
+      />
+    );
+  });
+
+//Story for Movie credit List
+storiesOf("Movie Credits List Pages/Movie Credits List", module)
+.addDecorator(story => (
+  <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+))
+.add("default", () => {
+  const movieCredits = [sampleMovieCredits,sampleMovieCredits, sampleMovieCredits, sampleMovieCredits];
+  return (
+    <MovieCreditList
+    movieCredit={movieCredits}
+
+    />
+  );
+});
+
 
 //Story for Filter controls on Actor List Pages 
 storiesOf("Actor List Pages/Filter Controls", module)
@@ -146,33 +189,35 @@ storiesOf("Actor List Pages/ Page Header", module).add("default", () => (
   <Header title="Popular Actors" numActors={10} />
 ));
 
-//Story for actor card
+
+
+  //Story for actor card
 //actor card that show actor profile poster and default poster
 storiesOf("Actor List Pages/Actor Card", module)
-  .addDecorator(story => (
-    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
-  ))
-  .add("default", () => (
+.addDecorator(story => (
+  <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+))
+.add("default", () => (
+  <ActorCard
+    actor={sampleActor}
+    action={actor => <button className="btn">
+      Test Button
+    </button>}
+  />
+))
+.add("exception", () => {
+  const sampleNoPoster = { ...sampleActor, profile_path: undefined };
+  return (
     <ActorCard
-      actor={sampleActor}
-      action={actor => <button className="btn">
-        Test Button
-      </button>}
+      actor={sampleNoPoster}
+      action={actor => (
+        <button className="btn">
+           Test Button
+        </button>
+      )}
     />
-  ))
-  .add("exception", () => {
-    const sampleNoPoster = { ...sampleActor, profile_path: undefined };
-    return (
-      <ActorCard
-        actor={sampleNoPoster}
-        action={actor => (
-          <button className="btn">
-             Test Button
-          </button>
-        )}
-      />
-    );
-  });
+  );
+});
 
 //Story for Actor List
 storiesOf("Actor List Pages/Actor List", module)
@@ -206,8 +251,6 @@ storiesOf("Actor Details Page/Actor Header", module)
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
   ))
   .add("default", () => <MovieHeader movie={sample} />);
-
-
 
 
 
