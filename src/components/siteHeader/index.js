@@ -10,8 +10,9 @@ const SiteHeader = () => {
   
   const context = useAuth();
 
-  return context.isLoggedIn ? (
-  <Navbar collapseOnSelect variant="dark"expand="lg" fixed="top">
+  //return context.isLoggedIn ? (
+  
+  return <Navbar collapseOnSelect variant="dark"expand="lg" fixed="top">
     <FontAwesomeIcon
         className="navbar-text text-dark"
         icon={["fas", "film"]}
@@ -51,31 +52,31 @@ const SiteHeader = () => {
   </Navbar.Collapse>
 </Navbar>
 
-  ) : (
+//   ) : (
 
-    <Navbar collapseOnSelect variant="dark"expand="lg" fixed="top">
-    <FontAwesomeIcon
-        className="navbar-text text-dark"
-        icon={["fas", "film"]}
-        size="3x"
-        to ="/"
-      />
-  <Navbar.Brand className="text-dark brand " href="/">TMDB</Navbar.Brand>
+//     <Navbar collapseOnSelect variant="dark"expand="lg" fixed="top">
+//     <FontAwesomeIcon
+//         className="navbar-text text-dark"
+//         icon={["fas", "film"]}
+//         size="3x"
+//         to ="/"
+//       />
+//   <Navbar.Brand className="text-dark brand " href="/">TMDB</Navbar.Brand>
   
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
-    <Nav className="ml-auto">
-      <Nav.Item><Link className="nav-link text-dark" to="/"> HOME</Link></Nav.Item>
-    <Nav.Item><Link className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
-    <Nav.Item><Link className="nav-link text-dark" to="/signup"> SIGN UP</Link></Nav.Item>
-  </Nav>
+//   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+//   <Navbar.Collapse id="responsive-navbar-nav">
+//     <Nav className="ml-auto">
+//       <Nav.Item><Link className="nav-link text-dark" to="/"> HOME</Link></Nav.Item>
+//     <Nav.Item><Link className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
+//     <Nav.Item><Link className="nav-link text-dark" to="/signup"> SIGN UP</Link></Nav.Item>
+//   </Nav>
 
   
   
-  </Navbar.Collapse>
-</Navbar>
+//   </Navbar.Collapse>
+// </Navbar>
   
-  )
+  //)
 }
 
 export default SiteHeader;
