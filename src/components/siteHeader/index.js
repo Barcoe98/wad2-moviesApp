@@ -41,14 +41,13 @@ const SiteHeader = () => {
         <NavDropdown.Item><Link className="text-dark" to="/movies/favorites"> FAVOURITES</Link></NavDropdown.Item>
         <NavDropdown.Item><Link className="text-dark" to="/movies/watchlist"> WATCH LIST</Link></NavDropdown.Item>
       </NavDropdown>
-
-  </Nav>
-
-  <Nav className="mr-sm-2">
-    <Nav.Item><Link className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
+      
+      <Nav.Item><Link id = "login" className="nav-link text-dark" to="/login"> LOGIN</Link></Nav.Item>
     <Nav.Item><Link className="nav-link text-dark" to="/signup"> SIGN UP</Link></Nav.Item>
     <Nav.Item ><Link className="nav-link text-dark" to="/dashboard"> DASHBOARD</Link></Nav.Item>
   </Nav>
+
+   
   
   </Navbar.Collapse>
 </Navbar>

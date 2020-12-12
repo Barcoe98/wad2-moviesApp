@@ -1,10 +1,6 @@
 
   /* eslint-disable */
   describe("Sign Up Page", () => {
-  
-    before(() => {
-       
-    })
 
     beforeEach(() => {
       cy.visit("/signup");

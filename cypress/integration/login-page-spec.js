@@ -1,10 +1,5 @@
   /* eslint-disable */
   describe("Login Page", () => {
-
-    before(() => {
-
-      })
-
     beforeEach(() => {
       cy.visit("/login");
     });

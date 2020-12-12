@@ -57,8 +57,8 @@ const App = () => {
               <Route path="/forgot-password" component={ForgotPasswordPage} /> 
               <PrivateRoute exact path="/dashboard" component={DashboardPage}/>
               <PrivateRoute exact path="/update-profile" component={UpdateProfilePage}/>
-              <Route path="/reviews/:id" component={MovieReviewPage} />
-              <Route path="/movies/:id" component={MoviePage} />
+              <PrivateRoute path="/reviews/:id" component={MovieReviewPage} />
+              <PrivateRoute path="/movies/:id" component={MoviePage} />
               <Route exact path="/" component={HomePage} />
           <Redirect from="*" to="/" />
           </Switch>
