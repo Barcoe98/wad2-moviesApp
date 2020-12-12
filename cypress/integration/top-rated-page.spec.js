@@ -27,7 +27,7 @@ const filterByGenre = (movieList, genreId) =>
     beforeEach(() => {
         //forces refresh before each test
         cy.visit("/");
-        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(2).click();
+        cy.get("nav").get("div").eq(3).find("a").eq(2).click().get("a").find("a").eq(2).click();
     });
   
     //Check if page header has cahnged to "Top Rated Movies"

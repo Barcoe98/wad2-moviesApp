@@ -27,7 +27,7 @@ const filterByGenre = (movieList, genreId) =>
     beforeEach(() => {
         //forces refresh before each test
         cy.visit("/");
-        cy.get("nav").get("div").eq(3).find("a").eq(1).click().get("a").find("a").eq(0).click();
+        cy.get("nav").get("div").eq(3).find("a").eq(2).click().get("a").find("a").eq(0).click();
     });
   
     //Check if page header has changed to "Now Playing Movies"
@@ -42,12 +42,12 @@ const filterByGenre = (movieList, genreId) =>
     describe("Filtering", () => {
       describe("By movie title" ,() => {
         it("should display movies with 'a' in the title", () => {
-          const searchString = 'a'
+          const searchString = 't'
           const matchingMovies = filterByTitle(movies, searchString );
           cy.get("input").clear().type(searchString) ;
           cy.get(".card").should("have.length", matchingMovies.length);
           cy.get(".card").each(($card, index) => {
-            cy.wrap($card)
+          cy.wrap($card)
             .find(".card-title")
             .should("have.text", matchingMovies[index].title);
           });

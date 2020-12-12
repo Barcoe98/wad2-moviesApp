@@ -26,7 +26,7 @@ const filterByGenre = (movieList, genreId) =>
     beforeEach(() => {
       //forces refresh before each test
       cy.visit("/");
-      cy.get("nav").get("div").eq(3).find("a").eq(3).click();
+      cy.get("nav").get("div").eq(3).find("a").eq(4).click().get("a").find("a").eq(0).click();
       //cy.get(".card").eq(0).find("button").click();
       //cy.get(".card").eq(0).find("button").click();
       //cy.get(".card").eq(0).find("button").click().visit("/movies/favorites");
