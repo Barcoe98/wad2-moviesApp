@@ -15,8 +15,9 @@ describe("Navigation", () => {
   //Login Custom command
   Cypress.Commands.add('login', (user) => {
     cy.visit("/login");
-    cy.get('#password').type(user.email)
-  cy.get('#email').type(user.password)
+    cy.get('#email').type(user.email)
+    cy.get('#pasword').type(user.password)
+    cy.get('.btn').click()
   })
   
   before(() => {
@@ -56,7 +57,7 @@ describe("Navigation", () => {
     // cy.get('#password').type(pword)
     // cy.get('.btn').click()
 
-   // cy.login({ email: email, password: pword })
+    cy.login({ email: email, password: pword })
 
   });
 
