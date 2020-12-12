@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import{ Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/authContext'
 import { Link, useHistory } from "react-router-dom"
+import "./auth.css";
+
 
  const SignUp = () => {
     const emailRef = useRef();
@@ -34,9 +36,9 @@ import { Link, useHistory } from "react-router-dom"
 
     return (
         <>
-          <Card className = "mt-5">
+          <Card className = "mt-5 card">
             <Card.Body>
-              <h2 className="text-center mb-4">Sign Up</h2>
+              <h1 className="text-center mb-4">Sign Up</h1>
               {error && <Alert variant="danger">{error}</Alert>}
               <Form  onSubmit={handleSubmit}>
                 <Form.Group className="text-left" id="email">
@@ -51,14 +53,14 @@ import { Link, useHistory } from "react-router-dom"
                   <Form.Label>Password Confirmation</Form.Label>
                   <Form.Control type="password" ref={passwordConfirmRef} required />
                 </Form.Group>
-                <Button disabled={loading} className = "w-50" type="submit" style={{ color: '#FFF' }} >
+                <Button disabled={loading}  className = "w-50 btnAuth" type="submit"  >
                   Sign Up
                 </Button>
               </Form>
             </Card.Body>
           </Card>
-          <div className="w-100 text-center mt-2" style={{ color: '#FFF' }}>
-            Already have an account? <Link to="/login" style={{ color: '#FFDF00' }} >Log In</Link>
+          <div className="w-100 text-center mt-2 tt" >
+            Already have an account? <Link className = "link" to="/login">Log In</Link>
           </div>
         </>
       )

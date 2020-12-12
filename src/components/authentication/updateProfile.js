@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import{ Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth} from '../../contexts/authContext'
 import { Link, useHistory } from "react-router-dom"
+import "./auth.css";
+
 
 
  const UpdateProfile = () => {
@@ -51,10 +53,11 @@ import { Link, useHistory } from "react-router-dom"
 
 
     return(<>
-            <Card className = "mt-5">
+            <Card className = "mt-5 card">
                 <Card.Body>
-                    <h2 className="text-center mb-4"> Update Profile</h2>
+                    <h1 className="text-center mb-4"> Update Profile</h1>
                    {error && <Alert variant = "danger">{error} </Alert>}
+                  
                    <Form className="text-left " onSubmit = {handleSubmit}>
                         <Form.Group className="text-left" id = "email">
                             <Form.Label> Email</Form.Label>
@@ -72,12 +75,11 @@ import { Link, useHistory } from "react-router-dom"
                             <Form.Control type="password-confirm" ref = {passwordConfirmRef} placeholder = 
                             "Leave Blank to stay the same" required ></Form.Control>
                         </Form.Group>
-
-                        <Button disabled = {loading} className = "w-50" type = "submit" style={{ color: '#FFF' }}> Update Profile</Button>
-                        
                     </Form>
-                        <div className = "w-100 text-center mt-2">
-                            <Link to = "/" style={{ color: '#FF0000' }} > Cancel</Link>
+
+                    <Button disabled = {loading} className = "w-50 text-center btnAuth" type = "submit" > Update Profile</Button>
+                        <div className = "w-100 text-center mt-2 ">
+                            <Link className = "link" to = "/" > Cancel ?</Link>
                         </div>
                 </Card.Body>
             </Card>

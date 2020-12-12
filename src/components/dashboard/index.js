@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import{ Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/authContext'
 import {Link, useHistory} from "react-router-dom"
+import "./dashboard.css";
+
 
 export const Dashboard = () => {
     const [ error, setError ] = useState("")
@@ -21,16 +23,16 @@ export const Dashboard = () => {
 
     return(
         <>
-            <Card>
+            <Card className = "mt-5 card">
                 <Card.Body>
-                    <h2 className="text-center mb-4"> Profile</h2>
+                    <h1 className="text-center mb-4"> Profile</h1>
                     {error && <Alert variant = "danger">{error} </Alert>}
-                    <strong>Email:</strong> {currentUser.email}
-                    <Link to = "/update-profile" className = "btn btn-primary w-100 mt-3">Update Profile</Link>
+                    <h4><strong>Email:</strong> {currentUser.email}</h4>
+                    <Link to = "/update-profile" className = "btn w-50 mt-3 btnAuth">Update Profile</Link>
                 </Card.Body>
-                <div className = "w-100 text-center mt-2">
+                <div className = "w-100 text-center mt-3">
                     <Button variant = "link" onClick={handleLogout}
-                    className = "w-80" type = "submit"> Log Out</Button>
+                    className = "w-80 btnAuth" type = "submit"> Log Out</Button>
                 </div>
             </Card>
               

@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import{ Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/authContext'
 import { Link } from "react-router-dom"
+import "./auth.css";
+
 
 
  const ForgotPassword = () => {
@@ -31,9 +33,9 @@ import { Link } from "react-router-dom"
 
     return(
         <>
-          <Card className = "mt-50">
+          <Card className = "mt-5 card">
                 <Card.Body >
-                    <h2 className="text-center mb-4"> Password Reset</h2>
+                    <h1 className="text-center mb-4"> Password Reset</h1>
                    {error && <Alert variant = "danger">{error} </Alert>}
                    {message && <Alert variant = "success">{message} </Alert>}
                    <Form onSubmit = {handleSubmit}>
@@ -42,18 +44,19 @@ import { Link } from "react-router-dom"
                             <Form.Control type="email" ref = {emailRef} required ></Form.Control>
                         </Form.Group>
 
-                        <Button disabled = {loading} className = "w-50" type = "submit" style={{ color: '#FFF' }} > Reset Password</Button>
+                        <Button disabled = {loading} className = "w-50 btnAuth" type = "submit"> Reset Password</Button>
                         
                     </Form>
-                    <div className = "w-100 text-center mt-2">
-                        <Link to = "/login" style={{ color: '#FFDF00' }} > Login</Link>
+                    <div className = "w-100 text-center mt-2 ">
+                        <Link className = "link2" to = "/login" > Login</Link>
                     </div>
-                    <div className = "w-100 text-center mt-2">
-                    Need an account ? <Link to = "/signup" style={{ color: '#FFDF00' }} > Sign up</Link>
-                </div>
+                   
                 </Card.Body>
-                
             </Card>
+
+            <div className = "w-100 text-center mt-2 tt">
+                    Need an account ? <Link className = "link" to = "/signup" > Sign up</Link>
+                </div>
                 
                 
         </>

@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import{ Form, Button, Card, Alert } from 'react-bootstrap'
 import { useAuth } from '../../contexts/authContext'
 import { Link, useHistory } from "react-router-dom"
+import "./auth.css";
+
 
 
 export const Login = () => {
@@ -34,9 +36,9 @@ export const Login = () => {
 
     return(
         <>
-          <Card className = "mt-5">
+          <Card className = "mt-5 card">
                 <Card.Body>
-                    <h2 className="text-center mb-4"> Login</h2>
+                    <h1 className="text-center mb-4"> Login</h1>
                    {error && <Alert variant = "danger">{error} </Alert>}
                    <Form onSubmit = {handleSubmit}>
                         <Form.Group className="text-left" id = "email">
@@ -49,16 +51,16 @@ export const Login = () => {
                             <Form.Control type="password" ref = {passwordRef} required ></Form.Control>
                         </Form.Group>
 
-                        <Button disabled = {loading} className = "w-50" type = "submit" style={{ color: '#FFF' }}> Login</Button>
+                        <Button disabled = {loading} className = "w-50 btnAuth" type = "submit" > Login</Button>
                         
                     </Form>
                     <div className = "w-100 text-center mt-3">
-                        <Link to = "/forgot-password" style={{ color: '#FFDF00' }}> Forgot Password ?</Link>
+                        <Link className = "link2" to = "/forgot-password"> Forgot Password ?</Link>
                     </div>
                 </Card.Body>
             </Card>
-                <div className = "w-100 text-center mt-2" style={{ color: '#FFF' }}>
-                    Need an account ? <Link to = "/signup" style={{ color: '#FFDF00' }}> Sign up</Link>
+                <div  className = "w-100 text-center mt-2 tt" >
+                    Need an account ? <Link className = "link" to = "/signup" > Sign up</Link>
                 </div>
         </>
     )
