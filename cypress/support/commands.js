@@ -24,10 +24,16 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
 
+
   /* eslint-disable */
 
 const email = "b@b.com"
 const pword = "123456"
+
+const newEmail = "michael@Barcoe.com"
+const newPword = "michael123"
+const newPwordConfirm = "michael123"
+
 
     //Login Custom command
     Cypress.Commands.add('login', () => {
@@ -36,3 +42,12 @@ const pword = "123456"
       cy.get('#password').type(pword)
       cy.get('.btn').click()
     })
+
+    Cypress.Commands.add('signUp', () => {
+        cy.visit("/signup")
+        cy.get('#email').type(newEmail)
+        cy.get('#password').type(newPword)
+        cy.get('#password-confirm').type(newPwordConfirm)
+        cy.get('.btn').click()
+
+      })
