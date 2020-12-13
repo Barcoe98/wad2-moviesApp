@@ -21,11 +21,13 @@
   }
 
   /* Overview Header */
-  h4 {
+  .bio {
     background-color: #009dff;
     color: #333;
     padding: 2px;
     border-radius: 10px;
+    width: fit-content;
+
   }
 
   /* Overview Movie Text */

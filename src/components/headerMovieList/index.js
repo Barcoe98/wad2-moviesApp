@@ -5,7 +5,7 @@ const Header = ({ title, numMovies }) => {
   return (
     <div className="row">
       <div>
-        <h2 className="h2-title">
+        <h2 className="pgTitle">
           {`${title } `}
           <span className="badge badge-pill">{numMovies}</span>
         </h2>

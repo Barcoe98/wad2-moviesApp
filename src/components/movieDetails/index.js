@@ -4,17 +4,46 @@ import "./movieDetails.css";
 export default ({ movie }) => {
   return (
     <>
-      <h4 className="col-2">Overview</h4>
+      <h3 className="col-2 overview">Overview</h3>
       <p>{movie.overview}</p>
-      
+
+      <ul className="list-group list-group-horizontal">
+        <li key="rdh" className="itemTitle list-group-item list-group-item-dark">
+        <h5>{"Movie Tagline  "}</h5>
+        </li>
+        <li key="rdv" className=" itemList list-group-item">
+          <h5>{movie.tagline}</h5>
+        </li>
+      </ul>
+
+      <ul className="list-group list-group-horizontal">
+        <li key="rdh" className="itemTitle list-group-item list-group-item-dark">
+         Popularity
+        </li>
+        <li key="rdv" className=" itemList list-group-item">
+          {movie.popularity}
+        </li>
+      </ul>
+
       <ul className="list-group list-group-horizontal">
         <li key="ruh" className=" itemTitle list-group-item list-group-item-dark">
-          Runtime (min.)
+          Movie Budget
         </li>
         <li key="rut" className="itemList list-group-item ">
-          {movie.runtime}
+          {movie.budget}
         </li>
         </ul>
+
+        <ul className="list-group list-group-horizontal">
+        <li key="ruh" className=" itemTitle list-group-item list-group-item-dark">
+          Movie Revenue
+        </li>
+        <li key="rut" className="itemList list-group-item ">
+          {movie.revenue}
+        </li>
+        </ul>
+
+
         <ul className="list-group list-group-horizontal">
         <li key="rdh" className="itemTitle list-group-item list-group-item-dark">
           Release Date

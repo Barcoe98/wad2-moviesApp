@@ -1,7 +1,7 @@
 import React from "react";
 import ActorHeader from '../headerActor'
 import "./actorPage.css";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Template for actor Details Page
 
@@ -23,15 +23,13 @@ const TemplateActorPage = ({ actor, children }) => {
                 />
               </div>
               <div className=" mTitle col-8">
-                <h2>
+                <h1 className=" aName ">
                 {actor.name}
-                {/* 
-                {"   "}
-                <a href={movie.homepage}>
-                  <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
+                {"  "}
+                <a href={actor.homepage}>
+                  <FontAwesomeIcon className = "homeIcon" icon={["fas", "home"]} size="1x" />
                 </a>
-                */}
-              </h2>
+              </h1>
               {children}
             </div>
         </div>

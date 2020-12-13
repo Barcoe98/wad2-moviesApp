@@ -21,16 +21,20 @@
   }
 
   /* Overview Header */
-  h4 {
-    background-color: #009dff;
-    color: #333;
-    padding: 2px;
-    border-radius: 10px;
-  }
+
 
   /* Overview Movie Text */
   p {
     color: whitesmoke;
     padding: 6px;
     text-align: justify;
+  }
+
+  .taglineM { 
+    color: whitesmoke;
+  }
+
+  .overview {
+    width: fit-content;
+    text-align: center;
   }

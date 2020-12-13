@@ -19,10 +19,14 @@ img.movie {
   }
 
   /* Movie title */
-  h2{
+  .aName{
     color: #333333;
     text-align: center;
     background-color: #009dff;
     border-radius: 10px;
     margin-bottom: 10px;
+  }
+
+  .homeIcon {
+    color: white;
   }

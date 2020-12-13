@@ -1,7 +1,7 @@
 import React from "react";
 import MovieHeader from '../headerMovie'
 import "./moviePage.css";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Template for movie Details Page
 
@@ -23,15 +23,15 @@ const TemplateMoviePage = ({ movie, children }) => {
                 />
               </div>
               <div className=" mTitle col-8">
-                <h2>
+                <h1 className=" mName">
                 {movie.title}
-                {/* 
-                {"   "}
+                
+                {"  "}
                 <a href={movie.homepage}>
-                  <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
+                  <FontAwesomeIcon className = "homeIcon" icon={["fas", "home"]} size="1x" />
                 </a>
-                */}
-              </h2>
+               
+              </h1>
               {children}
             </div>
         </div>

@@ -2,9 +2,21 @@ import React from "react";
 import "./actorDetails.css";
 
 export default ({ actor }) => {
+  //const actorGender = ""
+
+  
   return (
     <>
-      <h4 className="col-2">Biography</h4>
+      {/* if ({actor.gender === 2}) {
+         actorGender === "male"
+      } else if ({actor.gender === 1}) {
+        actorGender === "female"
+      }
+      else {
+        actorGender === "undefined"
+      } */}
+
+      <h3 className="col-2 bio">Biography</h3>
       <p>{actor.biography}</p>
       
       <ul className="list-group list-group-horizontal">
@@ -15,6 +27,7 @@ export default ({ actor }) => {
           {actor.birthday}
         </li>
         </ul>
+
         <ul className="list-group list-group-horizontal">
         <li key="ruh" className=" itemTitle list-group-item list-group-item-dark">
           PLace Of Birth
@@ -33,17 +46,24 @@ export default ({ actor }) => {
         </li>
       </ul>
 
+      <ul className="list-group list-group-horizontal">
+        <li key="pop" className="itemTitle list-group-item list-group-item-dark">
+          Gender
+        </li>
+        <li key="rdv" className=" itemList list-group-item">
+          {actor.gender}
+        </li>
+      </ul>
 
       <ul className="list-group list-group-horizontal">
-        <li key="pch" className=" itemTitle list-group-item list-group-item-dark">
-          Also Know as :
+        <li key="dep" className="itemTitle list-group-item list-group-item-dark">
+        Known for Department
         </li>
-        {actor.also_known_as.map(pc => (
-          <li key={pc.name} className="itemList list-group-item">
-            {pc.name + ","}
-          </li>
-        ))}
+        <li key="rdv" className=" itemList list-group-item">
+          {actor.known_for_department}
+        </li>
       </ul>
+
     </>
   );
 };
