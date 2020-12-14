@@ -18,7 +18,7 @@ const SiteHeader = () => {
         size="3x"
         to ="/"
       />
-  <Navbar.Brand className="text-dark brand " href="/">TMDB</Navbar.Brand>
+  <Navbar.Brand className="text-dark brand " href="/">Movie Universe</Navbar.Brand>
   
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">

@@ -10,6 +10,8 @@
   .itemTitle {
     background-color: #009dff;
     color: #333;
+    border-radius: 10px;
+
   }
 
   /* List Items */
@@ -18,6 +20,8 @@
     color: whitesmoke;
     border: #333;
     padding-left: 4px;
+    border-radius: 10px;
+
   }
 
   /* Overview Header */
@@ -37,4 +41,7 @@
   .overview {
     width: fit-content;
     text-align: center;
+    background-color: #009dff;
+    border-radius: 10px;
   }
+

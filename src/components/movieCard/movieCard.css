@@ -21,6 +21,8 @@
   text-align: center;
   color: #333;
   font-size: large;
+  border-radius: 10px;
+  padding: 4px;
   background-color: gold;
   }
 
@@ -32,7 +34,6 @@
     margin-bottom: 10px;
   }
 
-  
   .container .btn:hover {
     color: white;
   }

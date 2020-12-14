@@ -11,7 +11,7 @@ export default ({ movie }) => {
         <li key="rdh" className="itemTitle list-group-item list-group-item-dark">
         <h5>{"Movie Tagline  "}</h5>
         </li>
-        <li key="rdv" className=" itemList list-group-item">
+        <li key="rdv" className="itemList list-group-item">
           <h5>{movie.tagline}</h5>
         </li>
       </ul>
@@ -20,7 +20,7 @@ export default ({ movie }) => {
         <li key="rdh" className="itemTitle list-group-item list-group-item-dark">
          Popularity
         </li>
-        <li key="rdv" className=" itemList list-group-item">
+        <li key="rdv" className="bbb itemList list-group-item">
           {movie.popularity}
         </li>
       </ul>
