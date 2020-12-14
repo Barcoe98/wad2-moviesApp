@@ -43,22 +43,22 @@ const App = () => {
         <ActorsContextProvider>
         <GenresContextProvider>    
             <Switch>
-              <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
-              <PrivateRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
-              <PrivateRoute exact path="/movies/watchlist" component={WatchListMoviesPage} />
-              <PrivateRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
-              <PrivateRoute exact path="/movies/nowplaying" component={nowPlayingMoviesPage} />
-              <PrivateRoute exact path="/movies/toprated" component={TopRatedMoviesPage} />
-              <PrivateRoute exact path="/movies/popular" component={PopularMoviesPage} />
-              <PrivateRoute exact path="/actors/popular" component={ActorsPage} />
-              <PrivateRoute path="/actors/:id" component={ActorPage} />
+              <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+              <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
+              <Route exact path="/movies/watchlist" component={WatchListMoviesPage} />
+              <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+              <Route exact path="/movies/nowplaying" component={nowPlayingMoviesPage} />
+              <Route exact path="/movies/toprated" component={TopRatedMoviesPage} />
+              <Route exact path="/movies/popular" component={PopularMoviesPage} />
+              <Route exact path="/actors/popular" component={ActorsPage} />
+              <Route path="/actors/:id" component={ActorPage} />
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={SignUpPage} /> 
               <Route path="/forgot-password" component={ForgotPasswordPage} /> 
-              <PrivateRoute exact path="/dashboard" component={DashboardPage}/>
-              <PrivateRoute exact path="/update-profile" component={UpdateProfilePage}/>
-              <PrivateRoute path="/reviews/:id" component={MovieReviewPage} />
-              <PrivateRoute path="/movies/:id" component={MoviePage} />
+              <Route exact path="/dashboard" component={DashboardPage}/>
+              <Route exact path="/update-profile" component={UpdateProfilePage}/>
+              <Route path="/reviews/:id" component={MovieReviewPage} />
+              <Route path="/movies/:id" component={MoviePage} />
               <Route exact path="/" component={HomePage} />
           <Redirect from="*" to="/" />
           </Switch>
