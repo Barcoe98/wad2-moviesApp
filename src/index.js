@@ -29,7 +29,7 @@ import SignUpPage from './pages/SignUpPage'
 import DashboardPage from './pages/dashboardPage'
 import ForgotPasswordPage from './pages/forgotPasswordPage'
 import UpdateProfilePage from './pages/updateProfilePage'
-import PrivateRoute from './pages/privateRoute';
+//import PrivateRoute from './pages/privateRoute';
 
 const App = () => {
   return (
