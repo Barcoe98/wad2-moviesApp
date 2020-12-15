@@ -40,14 +40,14 @@ describe("Navigation", () => {
           upcomingMovies = response.results;
         });
 
-    cy.login()
+    //cy.login()
 
   });
 
 
   describe("From the home page", () => {
     beforeEach(() => {
-      cy.visit("/");
+      //cy.visit("/");
     });
 
     //   //get first card on view, click img

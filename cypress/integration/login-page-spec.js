@@ -1,7 +1,7 @@
   /* eslint-disable */
   describe("Login Page", () => {
     beforeEach(() => {
-      cy.visit("/login");
+      cy.get("nav").find("div").eq(6).find("a").click();
     });
   
     describe("Base test", () => {
