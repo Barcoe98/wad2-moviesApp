@@ -57,6 +57,8 @@ e2etest:
   before_script:
     - npm install -g http-server
     - npm install cypress
+    - npm install --save-dev @percy/cypress
+
   script:
       # start the server in the background
     - npm run start:ci

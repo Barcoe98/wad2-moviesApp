@@ -63,6 +63,9 @@ const filterByGenre = (movieList, genreId) =>
             .find(".card-title")
             .should("have.text", matchingMovies[index].title);
           })
+
+          cy.percySnapshot();
+
         })
 
         it("should display no movie card (xyz) in the title", () => {
@@ -70,7 +73,8 @@ const filterByGenre = (movieList, genreId) =>
           const matchingMovies = filterByTitle(movies, searchString );
           cy.get("input").clear().type(searchString) ;
           cy.get(".card").should("have.length", matchingMovies.length);
-         
+          cy.percySnapshot();
+
         })
       })
 
