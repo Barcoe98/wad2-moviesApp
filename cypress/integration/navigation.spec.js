@@ -47,7 +47,7 @@ describe("Navigation", () => {
 
   describe("From the home page", () => {
     beforeEach(() => {
-      //cy.visit("/");
+      cy.visit("/");
     });
 
     //   //get first card on view, click img

@@ -34,19 +34,19 @@ describe("Movie Details Page", () => {
   //before each visit hompage
   //click on first card img
   beforeEach(() => {
-    cy.visit(`/`);
+    //cy.visit(`/`);
     cy.get(".card").eq(2).find("img").click();
   });
 
   //check if h2 header contains title of current movie
   it("should display movie title in the page header", () => {
-    cy.get("h2").contains(movie.title);
+    cy.get("h1").contains(movie.title);
   });
 
   //check if movie details are displayed
   it("should display the movie's details", () => {
-    cy.get("h4").contains("Overview");
-    cy.get("h4").next().contains(movie.overview);
+    cy.get("h3").contains("Overview");
+    cy.get("h3").next().contains(movie.overview);
     cy.get("ul")
       .eq(0)
       .within(() => {
