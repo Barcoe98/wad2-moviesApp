@@ -1,6 +1,7 @@
   /* eslint-disable */
   describe("Login Page", () => {
     beforeEach(() => {
+      cy.visit("/")
       cy.get("nav").find("div").eq(6).find("a").click();
     });
   

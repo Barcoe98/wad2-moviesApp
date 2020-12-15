@@ -3,6 +3,7 @@
   describe("Sign Up Page", () => {
 
     beforeEach(() => {
+      cy.visit("/")
       cy.get("nav").find("div").eq(7).find("a").click();        
     });
   
