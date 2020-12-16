@@ -1,9 +1,8 @@
   /* eslint-disable */
   describe("Dashboard Page", () => {
     before(() => {
-        //Logins in user
-        //cy.logOut();
-        cy.login();
+        //before anything log in a user
+        cy.login()
           })
     beforeEach(() => {
        //click dashboard link on navbar to go to dashboard

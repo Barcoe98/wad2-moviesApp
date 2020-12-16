@@ -2,7 +2,7 @@ let movies;
 let upcomingMovies;
 
 let reviews;
-const movieId = 497582; // Enola Holmes movie id
+const movieId = 531219; // Enola Holmes movie id
 const reviewId = "5f69e4d0cee2f6003633becf"
 
 /* eslint-disable */
@@ -40,7 +40,8 @@ describe("Navigation", () => {
           upcomingMovies = response.results;
         });
 
-    //cy.login()
+    //before anything log in a user
+    cy.login()
 
   });
 
@@ -50,21 +51,28 @@ describe("Navigation", () => {
       cy.visit("/");
     });
 
-    //   //get first card on view, click img
-    //   //check if url contain /movies/movie_id
-    //   //check h2 header that it contains movie title
-    //   it("should navigate to the movie details page and change browser URL", () => {
-    //     cy.get(".card").eq(1).find("img").click();
-    //     cy.url().should("include", `/movies/${movies[1].id}`);
-    //     cy.get("h2").contains(movies[1].title);
-    // });
+      //get first card on view, click img
+      //check if url contain /movies/movie_id
+      //check h2 header that it contains movie title
+      it("should navigate to the movie details page and change browser URL", () => {
+        cy.get(".card").eq(1).find("img").click();
+        cy.url().should("include", `/movies/${movies[1].id}`);
+        cy.get("h2").contains(movies[1].title);
+    });
 
 
-    //check all nav links work in dropdown menu from site header
-    //get movies dropdown, click
-    //get first element of dropdown click
-    //check in url and name are name of page
+    // check all nav links work in dropdown menu from site header
+    // get movies dropdown, click
+    // get first element of dropdown click
+    // check in url and name are name of page
     describe("From the site header ", () => {
+
+      it("Navigate to Discover Movies / Home page", () => {
+        //Discover Movies/Home Page
+         cy.get("nav").get("div").eq(3).find("a").eq(0).click();
+         cy.url().should("not.include", `/movies/favorites`);
+         cy.get("h2").contains("Discover Movies");
+       });
 
        it("Navigate to Now Playing Movies", () => {
         //Now Playing Page
@@ -94,12 +102,20 @@ describe("Navigation", () => {
          cy.get("h2").contains("Upcoming Movies");
        });
 
-       it("Navigate to Discover Movies / Home page", () => {
-        //Discover Movies/Home Page
-         cy.get("nav").get("div").eq(3).find("a").eq(0).click();
-         cy.url().should("not.include", `/movies/favorites`);
-         cy.get("h2").contains("Discover Movies");
-       });
+       
+       it("Navigate to Popular Actors", () => {
+        //Upcoming Page
+       cy.get("nav").get("div").eq(3).find("a").eq(3).click().get("a").find("a").eq(0).click();
+        cy.url().should("include", `/actors/popular`);
+        cy.get("h2").contains("Popular Actors");
+      });
+
+      it("Navigate to Latest Actors", () => {
+        //Upcoming Page
+        cy.get("nav").get("div").eq(3).find("a").eq(3).click().get("a").find("a").eq(1).click();
+        cy.url().should("include", `/actors/popular`);
+        cy.get("h2").contains("Latest Actors");
+      });
 
        it("Navigate to Favourite Movies", () => {
       //   //Favourites Page
@@ -148,6 +164,7 @@ describe("Navigation", () => {
     describe("From the Movie Details page ", () => {
         beforeEach(() => {
           cy.visit(`/movies/${movieId}`);
+          //cy.get(".card").eq(0).find("img").click();
         });
 
         it("should change browser URL when show/hide reviews is clicked", () => {
@@ -168,10 +185,8 @@ describe("Navigation", () => {
     describe("From the Favorites page", () => {
         
         beforeEach(() => {
-          cy.visit("/");
           cy.get(".card").eq(0).find("button").click();
-          cy.get("nav").get("div").eq(3).find("a").eq(4).click().get("a").find("a").eq(0).click();
-          cy.login()
+          cy.get("nav").get("div").eq(3).find("a").eq(4).click().get("a").find("a").eq(1).click();
 
         });
 
@@ -186,7 +201,8 @@ describe("Navigation", () => {
     describe("From the Watch List page", () => {
         
         beforeEach(() => {
-          cy.visit("/movies/upcoming");
+          //navigate to upcoming movies, click add to favourite button, navigate to watchlist
+          cy.get("nav").get("div").eq(3).find("a").eq(2).click().get("a").find("a").eq(3).click();
           cy.get(".card").eq(0).find("button").click();
           cy.get("nav").get("div").eq(3).find("a").eq(4).click().get("a").find("a").eq(1).click();
         });
@@ -231,7 +247,7 @@ describe("Navigation", () => {
 
         //Watch List Movies to movie details and back
         it("should navigate from watch list page to movie details and back", () => {
-          cy.visit("/movies/upcoming");
+          cy.get("nav").get("div").eq(3).find("a").eq(2).click().get("a").find("a").eq(3).click();
           cy.get(".card").eq(1).find("button").click();
           cy.get("nav").get("div").eq(3).find("a").eq(4).click().get("a").find("a").eq(1).click();
           cy.get(".card").eq(0).find("img").click();

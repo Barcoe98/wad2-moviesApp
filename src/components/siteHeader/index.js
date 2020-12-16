@@ -34,7 +34,7 @@ const SiteHeader = () => {
 
       <NavDropdown className="text-dark" title="PEOPLE" id="responsive-nav-dropdown">
         <NavDropdown.Item><Link className="text-dark" to="/actors/popular"> POPULAR</Link></NavDropdown.Item>
-        <NavDropdown.Item><Link className="text-dark" to="/actors/popular"> LATEST</Link></NavDropdown.Item>
+        <NavDropdown.Item><Link className="text-dark" to="/actors/latest"> LATEST</Link></NavDropdown.Item>
       </NavDropdown>
 
       <NavDropdown className="text-dark" title="MY TMDB" id="responsive-nav-dropdown">

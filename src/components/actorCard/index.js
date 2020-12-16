@@ -7,6 +7,7 @@ const ActorCard = ({actor, action}) => {
 
   return (
     <div className="col-sm-2">
+            <div className="card">
       <div className ="container">
           <Link to={`/actors/${actor.id}`}>
         <img
@@ -22,6 +23,7 @@ const ActorCard = ({actor, action}) => {
         <div class="text-block">
         <h4 className="card-title">{actor.name}</h4>
         </div>
+      </div>
       </div>
    </div>
   );

@@ -29,6 +29,9 @@ describe("Movie Details Page", () => {
         movie = movieDetails;
         return movieDetails.id;
       })
+
+      //before anything log in a user
+      cy.login()
   });
   
   //before each visit hompage
@@ -61,13 +64,12 @@ describe("Movie Details Page", () => {
       });
   });
 
-  //! removed icon, will add later
-  // it("should display the Home icon with the correct URL value", () => {
-  //   cy.get(".fa-home")
-  //     .parent()
-  //     .should("have.attr", "href")
-  //     .should("include", movie.homepage);
-  // });
+  it("should display the Home icon with the correct URL value", () => {
+    cy.get(".fa-home")
+      .parent()
+      .should("have.attr", "href")
+      .should("include", movie.homepage);
+  });
 
   //check is poster is displayed on movie details page
   it("should display movie poster", () => {

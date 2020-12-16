@@ -2,16 +2,16 @@ import React, { useContext } from "react";
 import PageTemplate from '../components/templateActorListPage'
 import {ActorsContext} from '../contexts/actorsContext'
 
-const ActorListPage = () => {
+const LatestActorListPage = () => {
   const context = useContext(ActorsContext);
   const actors = context.actors
 
   return (
       <PageTemplate 
-        title='Popular Actors'
+        title='Latests Actors'
         actors={actors}
         />
   );
 };
 
-export default ActorListPage;
+export default LatestActorListPage;

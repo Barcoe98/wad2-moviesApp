@@ -22,6 +22,9 @@ const filterByGenre = (movieList, genreId) =>
             //store results in varaible movies
             movies = response.results
           })
+
+          //before anything log in a user
+          cy.login()
       })
 
     beforeEach(() => {
