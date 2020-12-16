@@ -29,7 +29,7 @@ import SignUpPage from './pages/SignUpPage'
 import DashboardPage from './pages/dashboardPage'
 import ForgotPasswordPage from './pages/forgotPasswordPage'
 import UpdateProfilePage from './pages/updateProfilePage'
-//import PrivateRoute from './pages/privateRoute';
+import PrivateRoute from './pages/privateRoute';
 
 const App = () => {
   return (
@@ -55,7 +55,7 @@ const App = () => {
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={SignUpPage} /> 
               <Route path="/forgot-password" component={ForgotPasswordPage} /> 
-              <Route exact path="/dashboard" component={DashboardPage}/>
+              <PrivateRoute exact path="/dashboard" component={DashboardPage}/>
               <Route exact path="/update-profile" component={UpdateProfilePage}/>
               <Route path="/reviews/:id" component={MovieReviewPage} />
               <Route path="/movies/:id" component={MoviePage} />

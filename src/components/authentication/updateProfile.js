@@ -79,7 +79,7 @@ import "./auth.css";
 
                     <Button disabled = {loading} className = "w-50 text-center btnAuth" type = "submit" > Update Profile</Button>
                         <div className = "w-100 text-center mt-2 ">
-                            <Link className = "link" to = "/" > Cancel ?</Link>
+                            <Link id = "cancelLink" className = "link" to = "/" > Cancel ?</Link>
                         </div>
                 </Card.Body>
             </Card>
