@@ -79,77 +79,97 @@ Redesigned the whole app with my vision, Used storybook to design and implement 
 ### UI Design.
 The follwoing are screenshots of the UI and a caption of what there function is.
 
+#### Login.
 ![][login]
 >Shows login page for user to login with their credentials. Click on ign up text if user doesnt have an account. click on forgot password if user has forgotten their password
 
+#### Sign Up.
 ![][signUp]
 >Shows sign up page for new users. Contains link for users to log in if they hav an account.
 
+#### Dashboard.
 ![][dashboard]
 >Shows dashboard of current user. Button to update profile details for current user. Link for user to log out.
 
+#### Password Reset.
 ![][passwordReset]
 >Shows the password Reset page when a user has forgotten their password and need to reset it.
 
+#### Update Profile Details.
 ![][updateProfile]
 >Shows update profile page for logged in user. user can change there email and password.
 
+#### Upcoming Movies Page.
 ![][upcomingMovies]
 >Shows upcoming movies.
 
+#### Popular Movies Page.
 ![][popularMovies]
 >Shows popular movies.
 
+#### Now Playing Movies Page.
 ![][nowPlayingMovies]
 >Shows now playing movies.
 
+#### Top Rated Movies Page.
 ![][topRatedMovies]
 >Shows top rated movies.
 
+#### My Favourites Page.
 ![][favorites]
 >Shows favorites page with users favorite movies.
 
+#### My Watchlist Page.
 ![][watchlist]
 >Shows watchlist page with users watch listed movies.
 
+#### Movie Card.
 ![][movieCard]
 >Shows movie card.
 
+#### Movie List.
 ![][movies]
 >Shows list of movie cards.
 
+ #### Movie Details.
 ![][movieDetails]
 >Shows detailed information on a movie. Clicking the 'Show Reviews' button will display extracts from critic reviews. Clicking home icon will bring you to actors external homepage (not all actors have a homepage)
 
+#### Full Review of Movie Card.
 ![][fullReview]
 >Shows the full text for a movie review. 
 
+#### New Review of Movie.
 ![][newReview]
 >Shows the form to create a movie review. 
 
+#### Actor Card.
 ![][actorCard]
 >Shows actor card.
 
+#### Popular Actor Page.
 ![][actors]
 >Shows the list of Popular actors.
 
+#### Latest Actors Page.
 ![][actors]
 >Shows the list of Latest actors.(issue with endpoint)
 
+#### Actor Details Page.
 ![][actorDetails]
 >Shows detailed information on a actor. Clicking home icon will bring you to actors external homepage (not all actors have a homepage)
 
+#### Actors Movie Credit Card.
 ![][actorMovieCredits]
 >Shows cards on a actors movie credits. (issue with implementing into actor details page)
 
+#### Actors Movie Credit List
 ![][actorMovieCreditCard]
 >Shows cards that each movie credit for an actor is displayed on (storybook only)(issue with implementing into actor details page)
 
 ## Testing.
-
 + Cypress Dashboard URL: https://dashboard.cypress.io/projects/4hosa3
 + Gitlab URL : https://gitlab.com/Barcoe98/moviesapp-ci
-
 
 ## Routing.
 
