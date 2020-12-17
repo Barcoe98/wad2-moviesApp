@@ -4,44 +4,45 @@
 Name: Michael Barcoe (20080330)
 
 ## Features.
+The following are the new features i added and the correspoding test file.
  
  + Feature 1 - Watchlist Page - Page that lists users watchlist movies.
-   Tests: cypress/integration/watchlist-page.spec.js 
+ + Tests: cypress/integration/watchlist-page.spec.js 
 
  + Feature 2 - Popular Movies Page - Lists Popular movies from TMDB
-   Tests: cypress/integration/popular-page.spec.js 
+ +  Tests: cypress/integration/popular-page.spec.js 
 
  + Feature 3 - Top Rated Movies Page - Lists Top Rated movies from TMDB
-   Tests: cypress/integration/top-rated-page.spec.js 
+ +  Tests: cypress/integration/top-rated-page.spec.js 
 
  + Feature 4 - Now Playing Movies Page - Lists Now Playing movies from TMDB
-   Tests: cypress/integration/now-playing-page.spec.js 
+ +  Tests: cypress/integration/now-playing-page.spec.js 
 
  + Feature 5 - Actors List Page - List the popular actors in a card form.
-   Tests: cypress/integration/popular-actors.spec.js 
+ +  Tests: cypress/integration/popular-actors.spec.js 
 
  + Feature 6 - Latest Actors List Page - List the latest actors in a card form.(issue with endpoint)
-   Tests: cypress/integration/latest-actors-page.spec.js 
+ +  Tests: cypress/integration/latest-actors-page.spec.js 
 
  + Feature 7 - Actor Page - List details of actor.
-   Tests: cypress/integration/actorDetails.spec.js 
+ + Tests: cypress/integration/actorDetails.spec.js 
 
  + Feature 8 - Actor Movie Credits component - List movie card of movies cctor has been in(issue with implementing)(works in stortybook). 
 
  + Feature 9 - Login Page - Lets user log in with an existing account.
-   Tests: cypress/integration/login.spec.js 
+ +  Tests: cypress/integration/login.spec.js 
 
  + Feature 10 - Sign up Page - Lets user create an account.
-   Tests: cypress/integration/sign-up.spec.js 
+ +  Tests: cypress/integration/sign-up.spec.js 
 
  + Feature 11 - Forgot Password Page - Lets user reset password.
-   Tests: cypress/integration/forgot.spec.js 
+ +  Tests: cypress/integration/forgot.spec.js 
 
  + Feature 12 - Update Profile Page - Lets user update password and email.
-   Tests: cypress/integration/update-profile.spec.js  
+ +  Tests: cypress/integration/update-profile.spec.js  
 
  + Feature 13 - Dashboard Page - List details of current logged in user.
-   Tests: cypress/integration/dashboard.spec.js 
+ +  Tests: cypress/integration/dashboard.spec.js 
   
 
 ## Setup requirements (If required).
@@ -73,11 +74,10 @@ Name: Michael Barcoe (20080330)
 
 Redesigned the whole app with my vision, Used storybook to design and implement new/exsisting components. Each of the elements i have redesigned. I haved added stories for actors, actor details, actors movie credits
 
-![][stories]
+<img src="https://res.cloudinary.com/dmikx06rt/image/upload/v1608233217/ReactMoviesApp/stories_pnjlu9.png" width="300" height="250">
 
 ### UI Design.
-
-The following are each new feature i added and the correspoding test file, also a screenshot of the UI.
+The follwoing are screenshots of the UI and a caption of what there function is.
 
 ![][login]
 >Shows login page for user to login with their credentials. Click on ign up text if user doesnt have an account. click on forgot password if user has forgotten their password
@@ -133,7 +133,7 @@ The following are each new feature i added and the correspoding test file, also 
 ![][actors]
 >Shows the list of Popular actors.
 
-![][latestActors]
+![][actors]
 >Shows the list of Latest actors.(issue with endpoint)
 
 ![][actorDetails]
@@ -142,24 +142,16 @@ The following are each new feature i added and the correspoding test file, also 
 ![][actorMovieCredits]
 >Shows cards on a actors movie credits. (issue with implementing into actor details page)
 
+![][actorMovieCreditCard]
+>Shows cards that each movie credit for an actor is displayed on (storybook only)(issue with implementing into actor details page)
+
 ## Testing.
 
-Cypress Dashboard URL: https://dashboard.cypress.io/projects/4hosa3
-Gitlab URL : https://gitlab.com/Barcoe98/moviesapp-ci
-
-### Advanced Testing (If required).
-
-[State briefly each instances of boundary and/or error/exceptional test case in your project]
-e.g.
-
-+ cypress/integration/movieReviewPage.spec.js - test the movieReview page when the Review id is invalid. 
-+ cypress/integration/movieDetails.spec.js - test when a movie has no reviews.
-+ etc
++ Cypress Dashboard URL: https://dashboard.cypress.io/projects/4hosa3
++ Gitlab URL : https://gitlab.com/Barcoe98/moviesapp-ci
 
 
 ## Routing.
-
-...... Insert a list of the additional routes supported by your Movies Fan app. If relevant, specify which of the routes require authentication, i.e. protected/private.
 
 + /movies/favorites (protected) - displays the user's favorite movies selection.
 + /movies/watchlist - (protected) - displays the user's favorite movies selection.
@@ -208,55 +200,57 @@ e.g.
 
 ## Independent learning (If relevant).
 
-Firebase - I used firebase authentication for user login and sign up. user can also reset password and update profile.
-Private Routes - Put all pages in private routes so user would have to log in to get full features of app.
-Percy - attempted percy, install and set up account , but issuw with app not obtaining percy_token, which was set in the .env.
-Cypress Custom Commands - Created custome commands for logging a user in, sign a new user up. logging a user out. Adding a movie to favorites or watchlist. Did this using the cypress documenations on custom commands.
-Browser Tab icon & name - Changed browser tab icona and name , to display movie icona and movie universe as the name
++ Firebase - I used firebase authentication for user login and sign up. user can also reset password and update profile.
++ Private Routes - Put all pages in private routes so user would have to log in to get full features of app.
++ Percy - attempted percy, install and set up account , but issuw with app not obtaining percy_token, which was set in the .env.
++ Cypress Custom Commands - Created custome commands for logging a user in, sign a new user up. logging a user out. Adding a movie to favorites or watchlist. Did this using the cypress documenations on custom commands.
++ Browser Tab icon & name - Changed browser tab icona and name , to display movie icona and movie universe as the name
 
 ## References
-Firebase Auth - https://www.youtube.com/watch?v=PKwu15ldZ7k&t=3s
-Private Routes - https://www.youtube.com/watch?v=PKwu15ldZ7k&t=3s
-Custom Commands - https://docs.cypress.io/api/cypress-api/custom-commands.html#Syntax
-Percy - https://docs.percy.io/docs/cypress
++ Firebase Auth - https://www.youtube.com/watch?v=PKwu15ldZ7k&t=3s
++ Private Routes - https://www.youtube.com/watch?v=PKwu15ldZ7k&t=3s
++ Custom Commands - https://docs.cypress.io/api/cypress-api/custom-commands.html#Syntax
++ Percy - https://docs.percy.io/docs/cypress
 
 ---------------------------------
 
 
-[favorites]: ./public/favorites.png
-[watchlist]: ./public/watchlist.png
+[favorites]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233223/ReactMoviesApp/favorites_mtzief.png
+[watchlist]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233222/ReactMoviesApp/watchlist_tgzdzu.png
 
-[fullReview]: ./public/fullReview.png
-[newReview]: ./public/newReview.png
+[fullReview]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233223/ReactMoviesApp/fullReview_qxyrbc.png
+[newReview]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233216/ReactMoviesApp/newReview_ssvayq.png
 
-[nowPlayingMovies]: ./public/nowPlayingMovies.png
-[topRatedMovies]: ./public/topRatedMovies.png
-[popularMovies]: ./public/popularMovies.png
-[upcomingMovies]: ./public/upcomingMovies.png
+[nowPlayingMovies]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233218/ReactMoviesApp/nowPlayingMovies_rqr2sh.png
+[topRatedMovies]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233219/ReactMoviesApp/topRatedMovies_gylug2.png
+[popularMovies]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233218/ReactMoviesApp/popularMovies_dlavty.png
+[upcomingMovies]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233219/ReactMoviesApp/upcomingMovies_xzgafu.png
 
-[movieCard]: ./public/movieCard.png
-[movies]: ./public/movies.png
-[movieDetails]: ./public/movieDetails.png
+[movieCard]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233223/ReactMoviesApp/movieCard_wnl5jf.png
+[movies]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233217/ReactMoviesApp/movies_cf4und.png
+[movieDetails]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233217/ReactMoviesApp/movieDetails_colrot.png
 
-[actorCard]: ./public/actorCard.png
-[actors]: ./public/actors.png
-[actorDetails]: ./public/actorDetails.png
+[actorCard]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233219/ReactMoviesApp/actorCard_lxk3yw.png
+[actors]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233222/ReactMoviesApp/actors_fnedci.png
+[actorDetails]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233220/ReactMoviesApp/actorDetails_jzupkk.png
+[actorMovieCredits]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608234702/ReactMoviesApp/movieCreditsList_qdmu0g.png
+[actorMovieCreditCard]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608234702/ReactMoviesApp/movieCreditCard_rpi8yo.png
 
-[passwordReset]: ./public/passwordReset.png
-[login]: ./public/login.png
-[signUp]: ./public/signUp.png
-[dashboard]: ./public/dashboard.png
-[updateProfile]: ./public/updateProfile.png
+[passwordReset]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233215/ReactMoviesApp/passwordReset_f3ygfe.png
+[login]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233222/ReactMoviesApp/login_w4wgwr.png
+[signUp]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233215/ReactMoviesApp/signUp_rnhegk.png
+[dashboard]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233221/ReactMoviesApp/dashboard_zhzoip.png
+[updateProfile]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233219/ReactMoviesApp/updateProfile_csqm8d.png
 
-[reviewLink]: ./public/reviewLink.png
+[reviewLink]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233218/ReactMoviesApp/reviewLink_uhb6fl.png
 
-[actorCardLink]: ./public/actorCardLink.png
-[movieCardLink]: ./public/movieCardLink.png
-[actorHomeLink]: ./public/actorHomeLink.png
-[movieHomeLink]: ./public/movieHomeLink.png
+[actorCardLink]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233223/ReactMoviesApp/actorCardLink_iczpxj.png
+[movieCardLink]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233221/ReactMoviesApp/movieCardLink_dgnksy.png
+[actorHomeLink]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233220/ReactMoviesApp/actorHomeLink_fshdwt.png
+[movieHomeLink]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233215/ReactMoviesApp/movieHomeLink_bzc9h6.png
 
-[ForgotPasswordLink]: ./public/ForgotPasswordHyperlink.png
-[loginLink]: ./public/loginHyperlink.png
-[updatePasswordLink]: ./public/updatePasswordHyperlink.png
+[signUp&ForgotPasswordHyperLink]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233216/ReactMoviesApp/signUpHyperlink_ytsljf.png
+[loginLink]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233223/ReactMoviesApp/loginHyperlink_chf2wd.png
+[updatePasswordLink]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233219/ReactMoviesApp/updatePasswordHyperlink_cns9kr.png
 
-[stories]: ./public/stories.png
+[stories]: https://res.cloudinary.com/dmikx06rt/image/upload/v1608233217/ReactMoviesApp/stories_pnjlu9.png
