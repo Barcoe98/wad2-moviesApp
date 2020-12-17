@@ -9,7 +9,6 @@ const MovieCard = ({movie, action}) => {
     <div className="col-sm-2">
       <div className="card">
       <div className="container">
-      
         <Link to={`/movies/${movie.id}`}>
       <img
       className="card-img-tag center"

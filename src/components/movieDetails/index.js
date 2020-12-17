@@ -9,7 +9,7 @@ export default ({ movie }) => {
 
       <ul className="list-group list-group-horizontal">
         <li key="rdh" className="itemTitle list-group-item list-group-item-dark">
-        <h5>{"Movie Tagline  "}</h5>
+        <h5>{"Movie Tagline"}</h5>
         </li>
         <li key="rdv" className="itemList list-group-item">
           <h5>{movie.tagline}</h5>

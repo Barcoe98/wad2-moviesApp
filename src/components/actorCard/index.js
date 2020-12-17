@@ -7,10 +7,10 @@ const ActorCard = ({actor, action}) => {
 
   return (
     <div className="col-sm-2">
-            <div className="card">
+    <div className="card">
       <div className ="container">
           <Link to={`/actors/${actor.id}`}>
-        <img
+        <img id = "imgCard"
         className="card-img-tag center"
         alt={actor.name}
         src={

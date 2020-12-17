@@ -8,7 +8,7 @@ const LatestActorListPage = () => {
 
   return (
       <PageTemplate 
-        title='Latests Actors'
+        title='Latest Actors'
         actors={actors}
         />
   );

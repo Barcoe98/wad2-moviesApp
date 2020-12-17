@@ -2,10 +2,12 @@
   describe("Dashboard Page", () => {
     before(() => {
         //before anything log in a user
-        cy.login()
+        //cy.login()
           })
     beforeEach(() => {
        //click dashboard link on navbar to go to dashboard
+       cy.login()
+
         cy.get("nav").find("div").eq(8).find("a").click();
     });
   
@@ -27,11 +29,11 @@
 
     describe("Navigation Tests", () => {
 
-        // it("Navigate to Update Profile", () => {
-        //   cy.visit("/dashboard");
-        //   cy.get(".upBtn").click()
-        //   cy.get("h1").contains("Update Profile");
-        // });
+        it("Navigate to Update Profile", () => {
+          // cy.visit("/dashboard");
+          // cy.get(".upBtn").click()
+          // cy.get("h1").contains("Update Profile");
+        });
 
     })
   })

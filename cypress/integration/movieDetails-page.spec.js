@@ -50,18 +50,30 @@ describe("Movie Details Page", () => {
   it("should display the movie's details", () => {
     cy.get("h3").contains("Overview");
     cy.get("h3").next().contains(movie.overview);
-    cy.get("ul")
-      .eq(0)
-      .within(() => {
-        cy.get("li").eq(0).contains("Runtime");
-        cy.get("li").eq(1).contains(movie.runtime);
+    cy.get("ul").eq(0).within(() => {
+        cy.get("h5").eq(0).contains("Tagline");
+        cy.get("li").eq(1).contains(movie.tagline);
       });
-      cy.get("ul")
-      .eq(1)
-      .within(() => {
+      cy.get("ul").eq(1).within(() => {
+        cy.get("li").eq(0).contains("Popularity");
+        cy.get("li").eq(1).contains(movie.popularity);
+      });
+
+      cy.get("ul").eq(2).within(() => {
+        cy.get("li").eq(0).contains("Movie Budget");
+        cy.get("li").eq(1).contains(movie.budget);
+      });
+
+      cy.get("ul").eq(3).within(() => {
+        cy.get("li").eq(0).contains("Movie Revenue");
+        cy.get("li").eq(1).contains(movie.revenue);
+      });
+
+      cy.get("ul").eq(4).within(() => {
         cy.get("li").eq(0).contains("Release Date");
         cy.get("li").eq(1).contains(movie.release_date);
       });
+
   });
 
   it("should display the Home icon with the correct URL value", () => {

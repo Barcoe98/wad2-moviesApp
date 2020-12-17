@@ -31,15 +31,18 @@ describe("Actor Details Page", () => {
 
       //before anything log in a user
       cy.login()
-      cy.get("nav").get("div").eq(3).find("a").eq(3).click().get("a").find("a").eq(0).click();
 
   });
   
   //before each visit hompage
   //click on first card img
   beforeEach(() => {
-    //cy.get("nav").get("div").eq(3).find("a").eq(3).click().get("a").find("a").eq(0).click();
-    cy.get(".card").eq(2).find("img").click();
+    cy.visit("/")
+    //cy.visit("/actors/popular")
+    cy.get("nav").get("div").eq(3).find("a").eq(3).click().get("a").find("a").eq(0).click();
+    //cy.get(".card").eq(0).find("img").click();
+    cy.get(".card").eq(2).find("img").click({force: true});
+    //cy.get("#imgCard").eq(0).click({force: true})
   });
 
   //check if h2 header contains name of current actor
@@ -49,27 +52,43 @@ describe("Actor Details Page", () => {
 
   //check if actor details are displayed
   it("should display the actor's details", () => {
-    cy.get("h3").contains("Overview");
-    cy.get("h3").next().contains(actor.biography);
+    cy.get("h3").contains("Biography");
+    
     cy.get("ul")
       .eq(0)
       .within(() => {
-        cy.get("li").eq(0).contains("Runtime");
-        cy.get("li").eq(1).contains(actor.age);
+        cy.get("li").eq(0).contains("Birthday");
+        cy.get("li").eq(1).contains(actor.birthday);
       });
+
       cy.get("ul")
       .eq(1)
       .within(() => {
-        cy.get("li").eq(0).contains("Release Date");
-        cy.get("li").eq(1).contains(movie.release_date);
+        cy.get("li").eq(0).contains("Place Of Birth");
+        cy.get("li").eq(1).contains(actor.place_of_birth);
       });
-  });
 
-  it("should display the Home icon with the correct URL value", () => {
-    cy.get(".fa-home")
-      .parent()
-      .should("have.attr", "href")
-      .should("include", actor.homepage);
+      cy.get("ul")
+      .eq(2)
+      .within(() => {
+        cy.get("li").eq(0).contains("Popularity");
+        cy.get("li").eq(1).contains(actor.popularity);
+      });
+
+      cy.get("ul")
+      .eq(3)
+      .within(() => {
+        cy.get("li").eq(0).contains("Gender");
+        cy.get("li").eq(1).contains(actor.gender);
+      });
+
+      cy.get("ul")
+      .eq(4)
+      .within(() => {
+        cy.get("li").eq(0).contains("Known for Department");
+        cy.get("li").eq(1).contains(actor.known_for_department);
+      });
+    
   });
 
   //check is poster is displayed on movie details page

@@ -28,6 +28,11 @@ const filterByGenre = (movieList, genreId) =>
 
       })
 
+      after(() => {
+        //after all tests log user out
+        cy.logOut();
+        })
+
     beforeEach(() => {
         //forces refresh before each test
         cy.visit("/");

@@ -24,7 +24,7 @@
 
         });
 
-        it("User clicks Cancel Navigate to Home", () => {
+        it("User clicks update profile Navigate to Home", () => {
             //clicking update profile should update profile ans navigate user to home page
         //   cy.get("#updateProBtn").click();
         //   cy.get("h2").contains("Discover Movies");

@@ -30,7 +30,7 @@ export default ({ actor }) => {
 
         <ul className="list-group list-group-horizontal">
         <li key="ruh" className=" itemTitle list-group-item list-group-item-dark">
-          PLace Of Birth
+          Place Of Birth
         </li>
         <li key="pob" className="itemList list-group-item ">
           {actor.place_of_birth}

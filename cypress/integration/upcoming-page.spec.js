@@ -27,6 +27,7 @@ const filterByGenre = (movieList, genreId) =>
           cy.login()
       })
 
+    
     beforeEach(() => {
         //forces refresh before each test
         cy.visit("/");

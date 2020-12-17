@@ -28,6 +28,8 @@ const filterByGenre = (movieList, genreId) =>
 
       })
 
+     
+
     beforeEach(() => {
         //forces refresh before each test
         cy.visit("/");
@@ -68,7 +70,7 @@ const filterByGenre = (movieList, genreId) =>
             .should("have.text", matchingMovies[index].title);
           })
 
-          cy.percySnapshot();
+          //cy.percySnapshot();
 
         })
 
@@ -77,7 +79,7 @@ const filterByGenre = (movieList, genreId) =>
           const matchingMovies = filterByTitle(movies, searchString );
           cy.get("input").clear().type(searchString) ;
           cy.get(".card").should("have.length", matchingMovies.length);
-          cy.percySnapshot();
+          //cy.percySnapshot();
 
         })
       })

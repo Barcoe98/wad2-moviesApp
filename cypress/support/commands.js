@@ -51,3 +51,22 @@ const newPword = Math.random().toString(36).slice(-8);
 
       //cy.percySnapshot();
     })
+  
+    
+           //navigates user to update profile page
+    Cypress.Commands.add('addToFavorites', () => {
+      //cy.login();
+      cy.get("nav").get("div").eq(3).find("a").eq(0).click();
+      cy.get(".card").eq(0).find("button").click();
+
+      //cy.percySnapshot();
+    })
+
+            //navigates user to update profile page
+    Cypress.Commands.add('NavigateToWatchlist', () => {
+      //cy.login();
+      cy.get("nav").get("div").eq(3).find("a").eq(2).click().get("a").find("a").eq(3).click();
+      cy.get(".card").eq(0).find("button").click();
+
+      //cy.percySnapshot();
+    })
